@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Quarterly on-chain report on how RBNT holders behaved: distribution, accumulation and selling, staking and named wallet flows.">
+<title>RBNT Holder Report</title>
+<link rel="icon" href="brand/logos/dao-logo-on-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="brand/tokens.css">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--background-deep);
+    color: var(--on-surface);
+    font: 400 16px/1.5 var(--font-sans);
+  }
+  .wrap { max-width: var(--space-max-width); margin: 0 auto; padding: 0 var(--space-margin-mobile); }
+  @media (min-width: 900px) { .wrap { padding: 0 var(--space-margin-desktop); } }
+  .hero {
+    background: var(--surface-steel);
+    border-bottom: 1px solid var(--panel-edge);
+    padding: 48px 0;
+  }
+  .logo { height: 56px; width: auto; display: block; margin-bottom: 32px; }
+  .label-caps {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--primary); margin: 0 0 8px;
+  }
+  h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 16px; }
+  h2 { font-size: clamp(24px, 4vw, 32px); font-weight: 600; letter-spacing: -0.01em; margin: 0 0 16px; }
+  .lede { font-size: 18px; line-height: 1.55; color: var(--on-surface-variant); max-width: 65ch; margin: 0; }
+  .mono { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.02em; }
+  a { color: var(--primary); }
+  section { padding: 48px 0; border-bottom: 1px solid var(--surface-container-high); }
+  section p { max-width: 70ch; color: var(--on-surface-variant); }
+  .card {
+    background: var(--surface-slate);
+    border: 1px solid var(--panel-edge);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .card-head { padding: 16px; border-bottom: 1px solid var(--panel-edge); color: var(--outline); font-size: 14px; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--surface-container-high); white-space: nowrap; }
+  th { color: var(--outline); font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+  td.num, th.num { text-align: right; font-family: var(--font-mono); }
+  tr:last-child td { border-bottom: 0; }
+  .grid { display: grid; gap: var(--space-gutter); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .grid .card { padding: 16px; }
+  .grid h3 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
+  .grid p { margin: 0; font-size: 14px; }
+  .status { display: flex; align-items: baseline; gap: 8px; }
+  .dot { flex: none; width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--warn); transform: translateY(-1px); }
+  .dot.ok { background: var(--ok); }
+  footer { padding: 32px 0 48px; color: var(--outline); font-size: 14px; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <img class="logo" src="brand/logos/dao-logo-on-dark.png" alt="Redbelly DAO">
+    <p class="label-caps">Quarterly on-chain holder report</p>
+    <h1>RBNT holders in Q3 2026</h1>
+    <p class="lede">How RBNT holders behaved from 1 July to 30 September 2026: how holdings are spread, what the largest holders did as groups, staking in the two Reddex pools, and flows in and out of publicly named wallets.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>Edition status</h2>
+    <p class="status"><span class="dot"></span>In progress. Figures below are first pulls and may be revised before the final report.</p>
+    <p>Snapshots are the last block before each quarter boundary: block <span class="mono">3025809</span> (30 June 2026, 23:57:19 UTC) and block <span class="mono">3209414</span> (30 September 2026, 23:57:35 UTC).</p>
+  </section>
+
+  <section>
+    <h2>Publicly named wallets</h2>
+    <p>Balances of Redbelly's reserved wallets from the DAO treasury page, the Wrapped RBNT contract and the two Reddex staking pools at the start and end of the quarter. Every value is read with <span class="mono">eth_getBalance</span> from the Redbelly mainnet RPC at the snapshot block. A staking pool balance may include reward funds as well as staked RBNT.</p>
+    <div class="card">
+      <div class="card-head">Source: <a href="data/processed/q3-2026/named_wallets.csv">named_wallets.csv</a>. Balances in RBNT.</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Wallet</th><th>Type</th><th class="num">30 Jun 2026</th><th class="num">30 Sep 2026</th><th class="num">Change</th></tr>
+          </thead>
+          <tbody id="named"><tr><td colspan="5">Loading data.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What this report covers</h2>
+    <div class="grid">
+      <div class="card"><h3>Distribution</h3><p>How RBNT is spread across holders, in balance bands, and how that changed over the quarter.</p></div>
+      <div class="card"><h3>Largest holders</h3><p>Accumulation and selling among the top 10, 50, 100 and 500 wallets, shown as groups only.</p></div>
+      <div class="card"><h3>Staking</h3><p>RBNT held in the Reddex no lock and 365 day pools at the start and end of the quarter.</p></div>
+      <div class="card"><h3>Named wallets</h3><p>Flows in and out of Redbelly's reserved wallets and explorer labelled exchanges.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Method and data</h2>
+    <p>The report names only wallets that are already public. Every other wallet appears only inside a group. Wrapped RBNT is counted once. Each number is logged with its source and the date it was fetched.</p>
+    <p><a href="docs/METHOD.md">Method and sources</a> &middot; <a href="data/processed/README.md">Data files</a> &middot; <a href="https://redbellydao.network/treasury/">DAO treasury page</a> &middot; <a href="https://redbelly.routescan.io">Routescan explorer</a></p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>No price predictions and no investment advice. Trends only, from public on-chain data.</p>
+</footer>
+
+<script>
+  (function () {
+    var body = document.getElementById("named");
+    var fmt = new Intl.NumberFormat("en-GB", { maximumFractionDigits: 0 });
+
+    function parseCsv(text) {
+      var rows = [], row = [], cell = "", quoted = false;
+      for (var i = 0; i < text.length; i++) {
+        var c = text[i];
+        if (quoted) {
+          if (c === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+          else if (c === '"') { quoted = false; }
+          else { cell += c; }
+        } else if (c === '"') { quoted = true; }
+        else if (c === ",") { row.push(cell); cell = ""; }
+        else if (c === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; }
+        else if (c !== "\r") { cell += c; }
+      }
+      if (cell || row.length) { row.push(cell); rows.push(row); }
+      return rows;
+    }
+
+    function td(text, cls) {
+      var el = document.createElement("td");
+      el.textContent = text;
+      if (cls) el.className = cls;
+      return el;
+    }
+
+    fetch("data/processed/q3-2026/named_wallets.csv")
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (text) {
+        var rows = parseCsv(text.trim()).slice(1);
+        body.textContent = "";
+        rows.forEach(function (r) {
+          var change = Number(r[5]);
+          var tr = document.createElement("tr");
+          tr.appendChild(td(r[1]));
+          tr.appendChild(td(r[0]));
+          tr.appendChild(td(fmt.format(Number(r[3])), "num"));
+          tr.appendChild(td(fmt.format(Number(r[4])), "num"));
+          tr.appendChild(td((change > 0 ? "+" : "") + fmt.format(change), "num"));
+          body.appendChild(tr);
+        });
+      })
+      .catch(function () {
+        body.innerHTML = '<tr><td colspan="5">Could not load the data file. Open named_wallets.csv directly.</td></tr>';
+      });
+  })();
+</script>
+</body>
+</html>
