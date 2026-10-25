@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 .venv/
-# Raw pulls hold unlabelled addresses. They are rebuilt by the scripts and never published.
-data/raw/*
-!data/raw/.gitkeep
-report/out/
+.pytest_cache/
+# Per-address cache. Rebuilt by the scripts and never published.
+cache/
+data/raw/

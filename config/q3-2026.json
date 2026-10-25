@@ -101,21 +101,92 @@
     "wallets": []
   },
   "holder_bands": {
-    "note": "Bands are in whole RBNT. Every unlabelled wallet is only ever reported inside a band, never by address.",
+    "note": "Lower bounds in whole RBNT. Holdings under 1 RBNT are counted as dust and left out of holder counts. A band with fewer than 5 wallets is merged into the band below it, so no group can point to one wallet.",
     "edges": [
-      0,
+      1,
+      100,
       1000,
       10000,
       100000,
       1000000,
-      10000000
+      10000000,
+      100000000
     ]
   },
   "top_groups": [
-    10,
-    50,
-    100,
-    500
+    [
+      1,
+      10
+    ],
+    [
+      11,
+      100
+    ],
+    [
+      101,
+      1000
+    ],
+    [
+      1001,
+      null
+    ]
   ],
-  "dust_threshold_rbnt": 1
+  "min_group_size": 5,
+  "change_threshold": 0.01,
+  "total_supply_rbnt": 10000000000,
+  "main_snapshots": [
+    [
+      "start",
+      "30 Jun 2026"
+    ],
+    [
+      "month_2026-08-01",
+      "31 Jul 2026"
+    ],
+    [
+      "month_2026-09-01",
+      "31 Aug 2026"
+    ],
+    [
+      "end",
+      "30 Sep 2026"
+    ]
+  ],
+  "contract_kinds": {
+    "note": "Rules applied in order to the contract name in verified source (lower case). The name describes the program, never who controls it. Kinds with fewer than 5 contracts are folded into Other contracts.",
+    "rules": [
+      [
+        "vest",
+        "Vesting contracts"
+      ],
+      [
+        "safe|multisig|gnosis",
+        "Multi-signature wallets (Safe)"
+      ],
+      [
+        "bridge|oft|portal|gateway|teleport",
+        "Bridge contracts"
+      ],
+      [
+        "pair|pool|swap|router|amm|algebra|liquidity",
+        "Trading pools on decentralised exchanges"
+      ],
+      [
+        "stak|farm|reward",
+        "Other staking contracts"
+      ],
+      [
+        "^$",
+        "Unverified contracts"
+      ],
+      [
+        ".*",
+        "Other verified contracts"
+      ]
+    ]
+  },
+  "links": {
+    "report_url": "",
+    "note": "Public address of the published report, used in the community summary and X thread. Leave empty to leave the link out."
+  }
 }
