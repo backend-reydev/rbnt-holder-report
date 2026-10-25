@@ -1,0 +1,121 @@
+{
+  "edition": "Q3 2026",
+  "period": {
+    "start_utc": "2026-07-01T00:00:00Z",
+    "end_utc": "2026-10-01T00:00:00Z",
+    "note": "Start snapshot is the last block before 1 July 2026 00:00 UTC. End snapshot is the last block before 1 October 2026 00:00 UTC, so it covers the whole of 30 September."
+  },
+  "snapshot_blocks": {
+    "start": 3025809,
+    "end": 3209414,
+    "note": "Filled in by scripts/01_snapshot_blocks.py from the Routescan getblocknobytime endpoint. Do not edit by hand."
+  },
+  "chain": {
+    "name": "Redbelly mainnet",
+    "chain_id": 151,
+    "native_symbol": "RBNT",
+    "decimals": 18,
+    "rpc_url": "https://governors.mainnet.redbelly.network",
+    "explorer_api": "https://api.routescan.io/v2/network/mainnet/evm/151/etherscan/api",
+    "explorer_v2": "https://api.routescan.io/v2/network/mainnet/evm/151",
+    "explorer_web": "https://redbelly.routescan.io"
+  },
+  "wrbnt": {
+    "label": "Wrapped RBNT (WRBNT)",
+    "address": "0x6ed1f491e2d31536d6561f6bdb2adc8f092a6076",
+    "source": "Task brief and Routescan label"
+  },
+  "staking_pools": [
+    {
+      "label": "Reddex RBNT staking pool, no lock",
+      "address": "0x43A1dc107BBb06dF266278056055AE7Fc5bd2817",
+      "source": "Task brief, https://www.reddex.io/stake"
+    },
+    {
+      "label": "Reddex RBNT staking pool, 365 day lock",
+      "address": "0x5E8040e85D0E6363D798a43BEa939C026449946d",
+      "source": "Task brief, https://www.reddex.io/stake"
+    }
+  ],
+  "reserved_wallets": {
+    "source": "https://redbellydao.network/treasury/ (table data read from the page bundle on 2026-10-25)",
+    "wallets": [
+      {
+        "label": "Team (Locked)",
+        "group": "Team",
+        "address": "0xbCee2DEfb7cF136480e3619Cf93E8129059977aF",
+        "original_allocation": 1000000000
+      },
+      {
+        "label": "Governance (Locked)",
+        "group": "Governance",
+        "address": "0x9a83957d3399CBBCbEf2112797B4a5B8e58C63d4",
+        "original_allocation": 200000000
+      },
+      {
+        "label": "Governance (Unlocked)",
+        "group": "Governance",
+        "address": "0x9E678318539D7C98057e9F89c58fb8f99752FaeA",
+        "original_allocation": 100000000
+      },
+      {
+        "label": "USYD/CSIRO (Locked)",
+        "group": "USYD/CSIRO",
+        "address": "0xAC27381EF74457c1258d54a808C2461eEdc56270",
+        "original_allocation": 200000000
+      },
+      {
+        "label": "Investors",
+        "group": "Investors",
+        "address": "0xeF816D556E01BC194AE302999930EAcD6dc4e566",
+        "original_allocation": 2785987083
+      },
+      {
+        "label": "Reserve",
+        "group": "Reserve",
+        "address": "0x7473fEAf836b5319D9190d8367991Dc6ef33C16d",
+        "original_allocation": 2000000000
+      },
+      {
+        "label": "Ecosystem (Locked)",
+        "group": "Ecosystem",
+        "address": "0xC5c131572d232512973e79204B93C2c1D57c879D",
+        "original_allocation": 2794132788
+      },
+      {
+        "label": "Ecosystem 2 (Unlocked)",
+        "group": "Ecosystem",
+        "address": "0xE0c701c40166BBD8D5f5Ec33c123F0A03E902DF7",
+        "original_allocation": null
+      },
+      {
+        "label": "Ecosystem (Unlocked)",
+        "group": "Ecosystem",
+        "address": "0x415cAD8Fc89F75a63C5B830E06460EEcdE083C9F",
+        "original_allocation": 919880129
+      }
+    ]
+  },
+  "labelled_contracts": {
+    "note": "Exchange and contract wallets that carry a public name tag on Routescan. Filled in by scripts/03_holder_candidates.py from the explorer's own name field. Only explorer labels are used. Nothing is added by guesswork.",
+    "wallets": []
+  },
+  "holder_bands": {
+    "note": "Bands are in whole RBNT. Every unlabelled wallet is only ever reported inside a band, never by address.",
+    "edges": [
+      0,
+      1000,
+      10000,
+      100000,
+      1000000,
+      10000000
+    ]
+  },
+  "top_groups": [
+    10,
+    50,
+    100,
+    500
+  ],
+  "dust_threshold_rbnt": 1
+}
