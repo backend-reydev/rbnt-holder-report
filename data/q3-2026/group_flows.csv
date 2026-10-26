@@ -1,0 +1,31 @@
+from_group,to_group,rbnt,rbnt_transfers,wrbnt,wrbnt_transfers,together
+Redbelly reserved wallets,Redbelly reserved wallets,786449003.000000,3,0.000000,0,786449003.000000
+Unnamed wallets,Unnamed wallets,553537464.621286,4385,1597425.962679,24,555134890.583964
+Unnamed wallets,Reddex staking pools,196366916.828833,489,0.000000,0,196366916.828833
+Token vesting contracts,Unnamed wallets,0.000000,0,127843546.310049,1885,127843546.310049
+WRBNT contract,Unnamed wallets,115929870.149382,1170,0.000000,0,115929870.149382
+Reddex staking pools,Unnamed wallets,95652687.563648,1188,0.000000,0,95652687.563648
+Redbelly reserved wallets,Token vesting contracts,0.000000,0,34720848.000000,4,34720848.000000
+Contracts with no published code,Contracts with no published code,25623047.052909,1115,0.000000,0,25623047.052909
+Redbelly reserved wallets,WRBNT contract,25100000.000000,2,0.000000,0,25100000.000000
+Redbelly reserved wallets,Reddex staking pools,15000000.000000,5,0.000000,0,15000000.000000
+Remaining contracts,Unnamed wallets,4954112.346522,97,8185206.328295,54,13139318.674817
+Unnamed wallets,Contracts with no published code,4124818.261463,881,7014644.500915,58,11139462.762378
+Unnamed wallets,Remaining contracts,9946375.314888,101,304171.711359,7,10250547.026247
+Token vesting contracts,Redbelly reserved wallets,0.000000,0,9613167.218170,1,9613167.218170
+Exchange liquidity pools,Contracts with no published code,2110886.419218,49,6718420.753742,261,8829307.172960
+Contracts with no published code,Exchange liquidity pools,1091070.690417,18,7718641.566748,272,8809712.257164
+Contracts with no published code,Remaining contracts,141123.788899,744,6884044.500915,55,7025168.289814
+Unnamed wallets,WRBNT contract,6838165.368245,68,0.000000,0,6838165.368245
+Contracts with no published code,WRBNT contract,6087100.373224,163,0.000000,0,6087100.373224
+WRBNT contract,Contracts with no published code,4538956.648156,93,0.000000,0,4538956.648156
+Contracts with no published code,Unnamed wallets,3509641.754170,742,633848.202848,76,4143489.957018
+Unnamed wallets,Exchange liquidity pools,2112814.138603,49,1790383.594099,88,3903197.732702
+Redbelly reserved wallets,Unnamed wallets,3496669.000000,22,0.000000,0,3496669.000000
+Exchange liquidity pools,Unnamed wallets,1091399.544485,19,1293350.087906,27,2384749.632391
+Remaining contracts,WRBNT contract,649510.000000,7,0.000000,0,649510.000000
+Exchange liquidity pools,Exchange liquidity pools,0.000000,0,387646.826472,11,387646.826472
+WRBNT contract,Remaining contracts,370377.259040,5,0.000000,0,370377.259040
+Redbelly reserved wallets,Remaining contracts,200000.000000,2,0.000000,0,200000.000000
+Remaining contracts,Contracts with no published code,15467.817669,145,0.000000,0,15467.817669
+Contracts with no published code,Shared-key wallets (Safe),1320.000000,132,0.000000,0,1320.000000

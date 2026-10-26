@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How we did it, RBNT holders Q3 2026</title><link rel="icon" href="assets/icon.png"><link rel="stylesheet" href="assets/holders.css">
+<script>try{var m=localStorage.getItem("holders-mode");if(m)document.documentElement.dataset.mode=m}catch(e){}</script>
+</head>
+<body>
+<header class="topbar"><div class="inner"><a class="mark" href="index.html"><img src="brand/logos/dao-logo-on-dark.png" alt="Redbelly DAO"><span>RBNT holders <em>Q3 2026</em></span></a>
+<nav aria-label="Main"><a href="index.html">Report</a><button type="button" id="mode">Dark</button><a class="cta" href="downloads/rbnt-holders-q3-2026.pdf">PDF</a></nav></div></header>
+<main class="inner prose"><h1>How we did it</h1>
+<p>This page is the method behind the RBNT holder report, written so that anyone
+can rerun it, check a number, or produce the next quarter. Edition 1 covers
+<strong>Q3 2026</strong>: 1 July to 30 September 2026.</p>
+<h2>In one paragraph</h2>
+<p>We read the Redbelly chain from its first block to the last block of
+30 September, listed every address that could possibly hold RBNT, and asked the
+node what each one held at fixed blocks. Wrapped and staked RBNT is credited to
+the address that owns it. Unnamed addresses are only ever reported inside
+groups of five or more. Before any table is written, a set of exact checks has
+to hold to the wei; after the tables are written, a separate stage reads the
+published figures back from the node.</p>
+<h2>What the brief asks, and where we answer it</h2>
+<div class="grid-wrap"><table>
+<thead>
+<tr>
+<th>The brief asks for</th>
+<th>What we measure</th>
+<th>Tables in <code>data/q3-2026/</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How holdings are spread, and how that changed</td>
+<td>Wallets and RBNT per holding size at four dates; share of the largest 10, 100, 1,000 and 1% of wallets; fewest wallets holding over half; Gini index; Lorenz curve</td>
+<td><code>size_bands</code>, <code>concentration_measures</code>, <code>lorenz_points</code></td>
+</tr>
+<tr>
+<td>Accumulation and selling by the largest holders, in groups</td>
+<td>Wallets grouped by holding on 30 June and followed to 30 September (up, flat, down, emptied, net change); top 10, next 90 and next 900 by rank; how each rank group holds its RBNT; size changes in a transition table</td>
+<td><code>cohort_outcomes</code>, <code>rank_groups</code>, <code>band_transitions</code></td>
+</tr>
+<tr>
+<td>Staking in the two Reddex pools</td>
+<td>Each pool's RBNT at the start and end (the headline), split into staked RBNT and reward reserve; daily balances; stakers joining and leaving; stake, withdrawal and claim events; stake sizes; when locked stakes come free</td>
+<td><code>pools_summary</code>, <code>pools_daily</code>, <code>stake_size_bands</code>, <code>unlock_schedule_365</code></td>
+</tr>
+<tr>
+<td>Flows in and out of the named wallets</td>
+<td>Each reserved wallet's balance at both dates and every day; every transfer of the quarter grouped by counterparty; WRBNT wrapped and passed on; reconciliation to the wei</td>
+<td><code>named_balances</code>, <code>named_counterparties</code>, <code>reserved_daily</code>, <code>reserved_wrbnt</code></td>
+</tr>
+<tr>
+<td>Labelled exchange wallets</td>
+<td>Public name tags on the explorer</td>
+<td>chapter 06 of the report</td>
+</tr>
+<tr>
+<td>Where the supply is</td>
+<td>All 10 billion RBNT by kind of owner and by holding address; flows between groups; coverage of the supply</td>
+<td><code>holdings_by_group</code>, <code>location_by_place</code>, <code>group_flows</code>, <code>supply_reconciliation</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2>Dates and blocks</h2>
+<p>A date in this report means the end of that day in UTC, and it is stood for by
+the newest block whose timestamp is earlier than midnight. We find that block
+by bisecting on block timestamps from the node, confirm that the next block is
+stamped at or after midnight, and compare our answer with the explorer's
+<code>getblocknobytime</code>. (The explorer counts a block stamped exactly at midnight as
+"before"; we do not. That is the only difference we allow.)</p>
+<div class="grid-wrap"><table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Block</th>
+<th>Stamped (UTC)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>End of 30 June 2026 (opening)</td>
+<td>3,025,809</td>
+<td>2026-06-30 23:57:19</td>
+</tr>
+<tr>
+<td>End of 31 July 2026</td>
+<td>3,104,242</td>
+<td>2026-07-31 23:58:45</td>
+</tr>
+<tr>
+<td>End of 31 August 2026</td>
+<td>3,161,410</td>
+<td>2026-08-31 23:57:49</td>
+</tr>
+<tr>
+<td>End of 30 September 2026 (closing)</td>
+<td>3,209,414</td>
+<td>2026-09-30 23:57:35</td>
+</tr>
+</tbody>
+</table></div>
+<p>The same rule gives a block for every day of the quarter (93 in all) and for
+every seventh day. Those are used for the pools, WRBNT and the reserved wallets.</p>
+<h2>Who we name</h2>
+<p>Twelve addresses may appear by name and address, and no others.</p>
+<p>Nine come from the DAO treasury page:</p>
+<div class="grid-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Treasury page name</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Team (Locked)</td>
+<td><code>0xbCee2DEfb7cF136480e3619Cf93E8129059977aF</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Governance (Locked)</td>
+<td><code>0x9a83957d3399CBBCbEf2112797B4a5B8e58C63d4</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Governance (Unlocked)</td>
+<td><code>0x9E678318539D7C98057e9F89c58fb8f99752FaeA</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>USYD/CSIRO (Locked)</td>
+<td><code>0xAC27381EF74457c1258d54a808C2461eEdc56270</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Investors</td>
+<td><code>0xeF816D556E01BC194AE302999930EAcD6dc4e566</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Reserve</td>
+<td><code>0x7473fEAf836b5319D9190d8367991Dc6ef33C16d</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ecosystem (Locked)</td>
+<td><code>0xC5c131572d232512973e79204B93C2c1D57c879D</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Ecosystem 2 (Unlocked)</td>
+<td><code>0xE0c701c40166BBD8D5f5Ec33c123F0A03E902DF7</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Ecosystem (Unlocked)</td>
+<td><code>0x415cAD8Fc89F75a63C5B830E06460EEcdE083C9F</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Three come from the task brief:</p>
+<div class="grid-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Contract</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>WRBNT, also tagged "Wrapped RBNT" by Routescan</td>
+<td><code>0x6ed1f491e2d31536d6561f6bdb2adc8f092a6076</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Reddex pool without a lock</td>
+<td><code>0x43A1dc107BBb06dF266278056055AE7Fc5bd2817</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Reddex pool with a 365 day lock</td>
+<td><code>0x5E8040e85D0E6363D798a43BEa939C026449946d</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>The reserved wallets come from the table the treasury page loads in its own
+script. That table gives each wallet's starting allocation, which is not what
+it holds today, so we use it only for names and addresses. Any address the
+explorer tags with an exchange's name would be added automatically; in this
+edition the explorer tagged none.</p>
+<h2>How a holding is counted</h2>
+<p>An address's <strong>holding</strong> is its RBNT, plus its WRBNT balance, plus whatever it
+has staked in either pool (<code>userInfo(address).amount</code>). Because of this,
+wrapping or staking never looks like selling.</p>
+<p>To count every coin exactly once:</p>
+<ul>
+<li>RBNT held by the WRBNT contract backs WRBNT one to one, so it is credited to
+  the WRBNT holders and not to the contract. If the contract ever held more RBNT
+  than the WRBNT supply, the excess would be shown on its own; in this edition
+  there was none.</li>
+<li>RBNT staked in a pool is credited to the staker. What is left in the pool
+  above its <code>totalStake</code> is the pool's <strong>reward reserve</strong>, shown separately.</li>
+</ul>
+<p>Holder counts, size bands and concentration cover <strong>unnamed wallets</strong> holding
+at least 1 RBNT. Named wallets and contracts are shown elsewhere, because the
+reserved wallets are large by design and a single contract can hold coins for
+many people. A wallet is an address without code at the closing block (an
+address carrying only an EIP-7702 delegation marker still counts as a wallet);
+anything with code is a contract.</p>
+<h2>How we found every address</h2>
+<ol>
+<li><strong>Every block.</strong> For each block from 0 to 3,209,414 we read the receipts
+   (<code>eth_getBlockReceipts</code>) and the header. Receipts give us every sender,
+   receiver and newly deployed contract, plus every event emitted by WRBNT or
+   either pool. Headers give us the 20-byte values listed in <code>extraData</code>, which
+   is where Redbelly names its governors.</li>
+<li><strong>Every internal transfer.</strong> Contracts also move RBNT inside other
+   transactions, and the public node has no trace interface, so we read the
+   explorer's <code>txlistinternal</code> by block range from block 0. Whenever a range
+   comes back at the 10,000 row limit we split it, so nothing is cut off.</li>
+<li><strong>Public tags.</strong> We read the explorer's address list, largest first, and the
+   WRBNT holder list, only to pick up public names and make sure no WRBNT
+   holder is missed.</li>
+</ol>
+<p>This gave 761,594 addresses. Governors matter because Redbelly pays fees to
+them as plain balance changes with no transaction attached, which is also why
+we never rebuild balances by adding up transfers.</p>
+<h2>How we read balances</h2>
+<ul>
+<li>RBNT of every address at the opening and closing blocks (<code>eth_getBalance</code>).</li>
+<li>RBNT at both month ends for every address that was non-empty at either end
+  or took part in any transfer during the quarter. Any other address held
+  nothing at either end and never moved, so it held nothing in between.</li>
+<li>WRBNT <code>balanceOf</code> at all four dates for every address that ever appeared in a
+  WRBNT event or the explorer's holder list, and the WRBNT <code>totalSupply</code>.</li>
+<li><code>userInfo</code> in both pools at all four dates for every address that ever
+  appeared in a pool event; each pool's <code>totalStake</code> and balance at every
+  daily block.</li>
+<li><code>getStakeUnlockTimes</code> at the closing block for every open stake.</li>
+<li><code>eth_getCode</code> at the closing block for every address that held anything.</li>
+</ul>
+<p>Balances in the explorer's lists are never used: they are today's figures and
+rounded.</p>
+<h2>How we sort contracts</h2>
+<p>For every contract that held at least 1 RBNT at one of the four dates we read
+the contract name from its verified source on the explorer (for a proxy, the
+name of the contract behind it). That name says what the program is, never who
+runs it. Names are matched in this order:</p>
+<div class="grid-wrap"><table>
+<thead>
+<tr>
+<th>Name contains</th>
+<th>Kind</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vest</code></td>
+<td>Token vesting contracts</td>
+</tr>
+<tr>
+<td><code>safe</code>, <code>multisig</code>, <code>gnosis</code></td>
+<td>Shared-key wallets (Safe)</td>
+</tr>
+<tr>
+<td><code>bridge</code>, <code>oft</code>, <code>portal</code>, <code>gateway</code>, <code>teleport</code></td>
+<td>Cross-chain bridge contracts</td>
+</tr>
+<tr>
+<td><code>pair</code>, <code>pool</code>, <code>swap</code>, <code>router</code>, <code>amm</code>, <code>algebra</code>, <code>liquidity</code></td>
+<td>Exchange liquidity pools</td>
+</tr>
+<tr>
+<td><code>stak</code>, <code>farm</code>, <code>reward</code></td>
+<td>Other staking programs</td>
+</tr>
+<tr>
+<td>no verified source</td>
+<td>Contracts with no published code</td>
+</tr>
+<tr>
+<td>anything else</td>
+<td>Remaining contracts</td>
+</tr>
+</tbody>
+</table></div>
+<p>A kind with fewer than five contracts is shown as part of Remaining contracts.</p>
+<h2>Staking: stakes and reward reserve</h2>
+<p>Both pools run the verified contract <code>ReddexRBNTLockStaker</code>. A stake adds the
+RBNT sent to the staker's <code>userInfo.amount</code> and to the pool's <code>totalStake</code>; a
+withdrawal takes it off both and sends it back; rewards are paid in RBNT from
+the pool's own balance. A pool's RBNT balance is therefore the stakes plus a
+reserve for rewards. As the brief asks, the headline figure is the pool's RBNT
+balance at each date; next to it we show <code>totalStake</code> and the difference.</p>
+<p>Stakes and withdrawals in the quarter are counted from the pools' own <code>Stake</code>
+and <code>Unstake</code> events, reward claims from <code>ClaimLiquidXReward</code>. A transfer into a
+pool that is not a call to <code>stake()</code> is a top-up of the reward reserve.</p>
+<h2>Named wallet flows</h2>
+<p>For each named wallet we take every successful transaction and every internal
+transfer with value between the two closing blocks, and group the other side by
+who they are: another named wallet by name, a contract by its kind, or
+otherwise "unnamed wallets". Fees are what the wallet paid for the transactions
+it sent. WRBNT moves of the reserved wallets are read from WRBNT <code>Transfer</code>,
+<code>Deposit</code> and <code>Withdrawal</code> events and listed separately, since moving a token
+does not change an RBNT balance.</p>
+<h2>Privacy safeguards</h2>
+<ul>
+<li>Only the addresses in the tables above are ever shown.</li>
+<li>An unnamed address can contribute to a count or a total, but only inside a
+  group that has five or more members. Size
+  bands, stake sizes, contract kinds and unlock months are merged, or shown as
+  "&lt;5", wherever a group would be smaller.</li>
+<li>Contract kinds come from the program's own published name. We never guess
+  who is behind an address and never add a label the explorer does not show.</li>
+<li>The per-address cache lives in <code>cache/</code> and is never committed. The audit
+  stage and the unit tests both fail if any other address appears in a
+  published file.</li>
+</ul>
+<h2>The exact checks</h2>
+<p>These must all hold, in wei, before any table is written (58 checks in this
+edition, listed with their results in <code>headline.json</code>):</p>
+<ul>
+<li>At each of the four dates, the WRBNT supply equals the sum of every WRBNT
+  balance, and the WRBNT contract holds at least that much RBNT.</li>
+<li>At each date, each pool's stakers add up to its <code>totalStake</code>, and the pool's
+  balance covers its <code>totalStake</code>.</li>
+<li>Over the quarter, for each pool, RBNT in <code>Stake</code> events minus RBNT in
+  <code>Unstake</code> events equals the change in <code>totalStake</code>.</li>
+<li>The unlock schedule of the 365 day pool adds up to its closing <code>totalStake</code>.</li>
+<li>At each date, holdings (WRBNT and stakes credited to owners, reserves left in
+  the pools) add up to the RBNT found.</li>
+<li>The changes of all groups net to the change in RBNT found.</li>
+<li>Every reported contract kind has at least five members.</li>
+<li>Every named wallet balances: opening RBNT + RBNT in - RBNT out - fees =
+  closing RBNT, with a gap of zero wei.</li>
+<li>The balances found cover more than 99.99% of the supply and never exceed it.</li>
+</ul>
+<h2>The second read</h2>
+<p>After the tables are written, the audit stage reads, straight from the node
+and without the cache: every named wallet's balance at both dates, both pools'
+<code>totalStake</code> at both dates and the WRBNT supply at both dates. It also reads
+600 cached balances again, picked at random with a fixed seed, re-tests every
+date's block, scans every published file against the house rules (no unnamed
+address, no long dashes, no emoji, no price talk, no credit lines) and checks
+every thread post fits in 280 characters. Results are in <code>audit.json</code>.</p>
+<h2>Coverage</h2>
+<p>All 10 billion RBNT existed from the first block. The balances we found add up
+to 99.99964% of the supply at the closing block. The remaining 36,485 RBNT sit
+at addresses that never appear in any transaction, internal transfer, event or
+header we read, such as addresses funded at launch and never touched. That
+remainder moved by about 11 RBNT during the quarter.</p>
+<h2>Sources</h2>
+<div class="grid-wrap"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Address</th>
+<th>Read for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redbelly mainnet RPC, chain ID 151</td>
+<td><code>https://governors.mainnet.redbelly.network</code></td>
+<td>Blocks, receipts, headers, every balance, WRBNT and pool calls, bytecode</td>
+</tr>
+<tr>
+<td>Routescan, Etherscan style API</td>
+<td><code>https://api.routescan.io/v2/network/mainnet/evm/151/etherscan/api</code></td>
+<td>Internal transfers, verified contract names, a second opinion on every snapshot block</td>
+</tr>
+<tr>
+<td>Routescan address list</td>
+<td><code>https://api.routescan.io/v2/network/mainnet/evm/151/addresses</code></td>
+<td>The explorer's own name tags, and nothing else from it</td>
+</tr>
+<tr>
+<td>Routescan WRBNT holders</td>
+<td><code>https://api.routescan.io/v2/network/mainnet/evm/151/erc20/0x6ed1f491e2d31536d6561f6bdb2adc8f092a6076/holders</code></td>
+<td>Making sure every WRBNT holder is read</td>
+</tr>
+<tr>
+<td>Redbelly DAO treasury page</td>
+<td><code>https://redbellydao.network/treasury/</code></td>
+<td>Which nine addresses count as reserved, and what each is called</td>
+</tr>
+<tr>
+<td>Reddex staking</td>
+<td><code>https://www.reddex.io/stake</code>, plus the pools' verified code</td>
+<td>Which pools hold RBNT stakes, lock lengths, how rewards are paid</td>
+</tr>
+<tr>
+<td>Task Board brand kit</td>
+<td><code>https://taskboard.redbellydao.network/brand</code></td>
+<td>Colours, type, logo use and voice</td>
+</tr>
+</tbody>
+</table></div>
+<p>The date the data was read is <code>read_on</code> in <code>headline.json</code>; the date of the
+second read is <code>ran</code> in <code>audit.json</code>.</p>
+<h2>Running it, and the next edition</h2>
+<p>Python 3.11 or newer, the packages in <code>requirements.txt</code>, and a Chromium that
+Playwright can drive (set <code>CHROMIUM_PATH</code> to use a system Chromium).</p>
+<pre><code>pip install -r requirements.txt
+make data      # blocks, crawl, traces, tags, holdings, programs (resumable)
+make report    # tables, draw, publish, audit
+make check     # offline: unit tests and the house-rules scan
+</code></pre>
+<p>Any single stage runs with <code>PYTHONPATH=src python -m rbnt &lt;stage&gt;</code>.</p>
+<p>For Q4 2026:</p>
+<ol>
+<li>Copy <code>config/q3-2026.json</code> to <code>config/q4-2026.json</code>. Change <code>edition</code>,
+   <code>period</code> and <code>main_snapshots</code> (month ends are named <code>month_YYYY-MM-01</code>), and
+   set <code>snapshot_blocks</code> back to null.</li>
+<li>Look at the DAO treasury page again and update <code>reserved_wallets</code> if it has
+   changed, with the date you read it.</li>
+<li>Run <code>make data report EDITION=q4-2026</code>. From an empty cache this reads about
+   3.4 million blocks; stretches with very busy blocks are split automatically.</li>
+<li>Read the new report from start to finish. Sentences that describe a
+   direction are generated from the numbers, but read them against the charts.</li>
+<li>Publish only when the audit ends with no failures.</li>
+</ol>
+<h2>Known gaps</h2>
+<ul>
+<li>A block explorer can show that coins left an address; it cannot show who
+  pressed the button or for what reason. A falling group total may
+  be selling, a move between one owner's addresses, or a deposit into a
+  contract.</li>
+<li>Addresses are not people. One person can use many addresses and one exchange
+  address can hold coins for many people.</li>
+<li>Internal transfers come from the explorer. We test them indirectly: the named
+  wallets, the WRBNT contract and both pools move coins mostly through internal
+  transfers, and all of them balance to the wei.</li>
+<li>Public tags were read for the 20,000 largest addresses in the explorer's
+  list, so a tag on a smaller address would be missed.</li>
+</ul><footer class="closing">Redbelly DAO Task Board. Figures from Redbelly mainnet blocks 3,025,809 and 3,209,414, read 2026-10-26. Trends only: no forecasts and no investment advice.</footer></main>
+<script src="assets/holders.js" defer></script>
+</body>
+</html>

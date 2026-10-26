@@ -8,7 +8,7 @@
   "snapshot_blocks": {
     "start": 3025809,
     "end": 3209414,
-    "note": "Filled in by scripts/01_snapshot_blocks.py from the Routescan getblocknobytime endpoint. Do not edit by hand."
+    "note": "Filled in automatically when the blocks stage runs (python -m rbnt blocks). Do not edit by hand."
   },
   "chain": {
     "name": "Redbelly mainnet",
@@ -97,11 +97,11 @@
     ]
   },
   "labelled_contracts": {
-    "note": "Exchange and contract wallets that carry a public name tag on Routescan. Filled in by scripts/03_holder_candidates.py from the explorer's own name field. Only explorer labels are used. Nothing is added by guesswork.",
+    "note": "Exchange and contract addresses that carry a public name tag on Routescan, in the explorer's own words. The tags stage reads them; nothing is added by guesswork.",
     "wallets": []
   },
   "holder_bands": {
-    "note": "Lower bounds in whole RBNT. Holdings under 1 RBNT are counted as dust and left out of holder counts. A band with fewer than 5 wallets is merged into the band below it, so no group can point to one wallet.",
+    "note": "Lower bounds in whole RBNT. Holdings under 1 RBNT are left out of wallet counts. A band that would hold fewer than 5 wallets at any main moment is merged into the band below it.",
     "edges": [
       1,
       100,
@@ -116,19 +116,23 @@
   "top_groups": [
     [
       1,
-      10
+      10,
+      "Top 10"
     ],
     [
       11,
-      100
+      100,
+      "Next 90"
     ],
     [
       101,
-      1000
+      1000,
+      "Next 900"
     ],
     [
       1001,
-      null
+      null,
+      "Everyone else"
     ]
   ],
   "min_group_size": 5,
@@ -153,35 +157,35 @@
     ]
   ],
   "contract_kinds": {
-    "note": "Rules applied in order to the contract name in verified source (lower case). The name describes the program, never who controls it. Kinds with fewer than 5 contracts are folded into Other contracts.",
+    "note": "Matched in order against the lower case contract name from verified source. The name describes the program, never who runs it. A kind with fewer than 5 contracts joins Remaining contracts.",
     "rules": [
       [
         "vest",
-        "Vesting contracts"
+        "Token vesting contracts"
       ],
       [
         "safe|multisig|gnosis",
-        "Multi-signature wallets (Safe)"
+        "Shared-key wallets (Safe)"
       ],
       [
         "bridge|oft|portal|gateway|teleport",
-        "Bridge contracts"
+        "Cross-chain bridge contracts"
       ],
       [
         "pair|pool|swap|router|amm|algebra|liquidity",
-        "Trading pools on decentralised exchanges"
+        "Exchange liquidity pools"
       ],
       [
         "stak|farm|reward",
-        "Other staking contracts"
+        "Other staking programs"
       ],
       [
         "^$",
-        "Unverified contracts"
+        "Contracts with no published code"
       ],
       [
         ".*",
-        "Other verified contracts"
+        "Remaining contracts"
       ]
     ]
   },

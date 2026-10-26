@@ -1,82 +1,72 @@
-# RBNT Quarterly On-Chain Holder Report
+# RBNT holder report
 
-A regular, sourced report on how RBNT holders behaved over a quarter: how
-holdings are spread, what the largest holders did as groups, staking in the two
-Reddex pools, and RBNT moving in and out of publicly named wallets.
+A quarterly, fully sourced look at how holders of RBNT, the Redbelly network's
+coin, behaved: who holds the supply, how top-heavy it is, what the largest
+wallets did as groups, how much is staked with Reddex, and what moved in and
+out of the wallets with public names.
 
-**First edition: Q3 2026** (1 July to 30 September 2026).
+This repository holds the first edition, **Q3 2026** (1 July to 30 September
+2026), and everything needed to make the next one.
 
-| Deliverable | Where |
+## What is here
+
+| You want | Open |
 | --- | --- |
-| The report, web edition | `index.html` (served by Vercel at the site root) |
-| The report, PDF | `downloads/rbnt-holder-report-q3-2026.pdf` |
-| The report, Word | `downloads/rbnt-holder-report-q3-2026.docx` |
-| Community summary and X thread | `community/summary.md`, `community/x_thread.txt`, `community/*.png` |
-| Data behind every chart and table | `data/processed/q3-2026/*.csv`, `downloads/rbnt-holder-report-q3-2026-data.xlsx` |
-| Every headline figure, machine readable | `data/processed/q3-2026/figures.json` |
-| Method and sources | `docs/METHOD.md` |
-| Independent verification results | `data/processed/q3-2026/verification.json` |
+| The report on the web | `index.html`, served from the repository root |
+| The report as a PDF or Word file | `downloads/` |
+| The short summary and the thread | `community/summary.md`, `community/thread.txt` |
+| Cards for X and Discord | `community/card-x.png` (1600x900), `community/card-discord.png` (1200x630) |
+| The numbers behind every chart | `data/q3-2026/*.csv`, or the workbook in `downloads/` |
+| Headline figures and the result of every check | `data/q3-2026/headline.json`, `data/q3-2026/audit.json` |
+| The method | `docs/how-we-did-it.md`, also published as `how-we-did-it.html` |
 
-## Ground rules
+## The rules the report keeps
 
-- The report is about trends, not people.
-- It names only wallets that are already public: Redbelly's reserved wallets
-  from the [DAO treasury page](https://redbellydao.network/treasury/), the
-  Wrapped RBNT contract, the two Reddex RBNT staking pools, and any exchange or
-  contract that carries a name tag on [Routescan](https://redbelly.routescan.io).
-- Every other address is counted only inside a group of at least five. No
-  published file contains an unlabelled address, and a check stops the build if
-  one ever appears.
-- No price predictions, no investment advice, no calls to buy or sell.
-- Every number is read from the chain at a stated block, and every published
-  figure is re-read from the node by an independent check before release.
+* It describes groups and trends, never individual holders.
+* It names only addresses that are already public: Redbelly's reserved wallets
+  on the [DAO treasury page](https://redbellydao.network/treasury/), the
+  Wrapped RBNT contract, the two Reddex RBNT pools, and anything the
+  [Routescan](https://redbelly.routescan.io) explorer tags with a public name.
+* An unnamed address only ever counts towards a group of five or more, and a
+  scan of every published file fails if one turns up by itself.
+* It forecasts nothing and advises nothing.
+* Every figure is read from the chain at a stated block and read again by a
+  separate stage before release.
 
-## How it works
+## How it is built
 
-```
-01 snapshots          last block before each boundary, cross-checked with the explorer
-02 scan_chain         every block from genesis: senders, recipients, created contracts,
-                      WRBNT and pool logs, governor addresses in headers, quarter transactions
-03 internal_transfers every internal transfer from genesis (explorer, by block range)
-04 explorer_labels    public name tags from the explorer
-05 balances           native RBNT, WRBNT and staked RBNT of every address at each snapshot
-06 contracts          program type of every RBNT-holding contract, from its verified source
-07 analyse            aggregated tables and figures.json, with exact checks in wei
-08 charts             SVG charts in the brand palette
-09 build              web page, PDF, Word file, workbook, community summary and cards
-10 verify             re-reads figures from the node, scans every file for publishing rules
-```
+One command line, `python -m rbnt <stage>`, with ten stages:
 
-The per-address cache lives in `cache/` and is never committed. Running the
-pipeline from an empty cache reads about 3.2 million blocks and a few hundred
-thousand addresses from public endpoints.
-
-## Running it
-
-Python 3.11 or later. Chromium is used to print the PDF and render chart PNGs
-(any Playwright install works).
+| Stage | Does |
+| --- | --- |
+| `blocks` | finds the block for each date and checks it against the explorer |
+| `crawl` | reads every block from genesis for addresses, WRBNT and pool events, governors and quarter transactions |
+| `traces` | reads every internal transfer from the explorer |
+| `tags` | reads public name tags |
+| `holdings` | reads RBNT, WRBNT and staked RBNT of every address at each date |
+| `programs` | reads what kind of program each RBNT-holding contract is |
+| `tables` | writes the published tables and `headline.json` after 58 exact checks |
+| `draw` | draws the charts into `figures/` |
+| `publish` | writes the web page, PDF, Word file, workbook, summary, thread and cards |
+| `audit` | reads published figures again from the node and scans every file |
 
 ```
 pip install -r requirements.txt
-make data        # read the chain (resumable)
-make analyse     # tables, figures.json and the exact checks
-make build       # charts, web page, PDF, Word, workbook, community files
-make verify      # independent re-read from the node and publishing-rule scan
-make check       # offline: unit tests and publishing-rule scan
+make data       # blocks to programs, resumable
+make report     # tables to audit
+make check      # offline unit tests and file scan
 ```
 
-For the next edition, see section 10 of `docs/METHOD.md`.
+The per-address cache sits in `cache/` and is never committed.
 
-## Repository layout
+## Layout
 
-| Path | What it holds |
+| Folder | Contents |
 | --- | --- |
-| `config/q3-2026.json` | Edition settings: dates, snapshot blocks, named wallets, bands, contract kinds |
-| `src/rbnt/` | RPC and explorer clients, cache, analysis functions, charts, page and exports |
-| `scripts/` | The pipeline, one numbered step per file |
-| `tests/` | Unit tests for the measures and the publishing rules |
-| `data/processed/` | Aggregated CSVs, `figures.json`, `verification.json` |
-| `report/charts/` | SVG charts used by every edition of the report |
-| `community/` | Community summary, X thread and social cards |
-| `downloads/` | PDF, Word and Excel editions |
-| `assets/`, `brand/` | Site styles, fonts (SIL Open Font License) and the Task Board brand kit |
+| `config/` | One settings file per edition: dates, named wallets, size bands, contract kinds |
+| `src/rbnt/` | Node and explorer clients, the cache, measures, charts, page and exports |
+| `src/rbnt/stages/` | The ten stages |
+| `tests/` | Unit tests for the measures and the house rules |
+| `data/q3-2026/` | Published tables, `headline.json`, `audit.json` |
+| `figures/` | Charts as SVG, plus PNG copies for the Word file |
+| `assets/`, `brand/` | Page style and script, fonts (SIL Open Font License), Task Board brand kit |

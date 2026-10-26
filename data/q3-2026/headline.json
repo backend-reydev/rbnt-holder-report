@@ -1,0 +1,1469 @@
+{
+  "edition": "Q3 2026",
+  "read_on": "2026-10-26",
+  "moments": {
+    "start": {
+      "title": "30 Jun 2026",
+      "block": 3025809
+    },
+    "month_2026-08-01": {
+      "title": "31 Jul 2026",
+      "block": 3104242
+    },
+    "month_2026-09-01": {
+      "title": "31 Aug 2026",
+      "block": 3161410
+    },
+    "end": {
+      "title": "30 Sep 2026",
+      "block": 3209414
+    }
+  },
+  "supply": {
+    "total": 10000000000,
+    "found_pct_end": 99.99964,
+    "not_reached_end": 36485.21453063615,
+    "not_reached_start": 36473.869585714296
+  },
+  "places": {
+    "Reserved wallets": {
+      "start": 5974773423.474407,
+      "end": 5930961030.244353
+    },
+    "WRBNT contract (backing for WRBNT)": {
+      "start": 1819066450.6643624,
+      "end": 1736902022.3492532
+    },
+    "Reddex no lock pool": {
+      "start": 360594599.05372727,
+      "end": 443228206.0028954
+    },
+    "Reddex 365 day pool": {
+      "start": 278467723.84535205,
+      "end": 311548346.16136914
+    },
+    "All other contracts": {
+      "start": 457621791.28071874,
+      "end": 464053740.3875322
+    },
+    "All other wallets": {
+      "start": 1109439537.8118467,
+      "end": 1113270169.6400661
+    },
+    "Not reached by the scan": {
+      "start": 36473.869585714296,
+      "end": 36485.21453063615
+    }
+  },
+  "groups": {
+    "Redbelly reserved wallets": {
+      "members": 9,
+      "start": 5974809361.36208,
+      "end": 5930989287.350195,
+      "change": -43820074.01188405,
+      "share_end_pct": 59.30989287350196
+    },
+    "Unnamed wallets": {
+      "members": 53664,
+      "start": 1819574560.9631107,
+      "end": 1958648098.3207753,
+      "change": 139073537.35766456,
+      "share_end_pct": 19.586480983207753
+    },
+    "Token vesting contracts": {
+      "members": 18,
+      "start": 1684803155.8382454,
+      "end": 1582067290.3100271,
+      "change": -102735865.52821827,
+      "share_end_pct": 15.820672903100272
+    },
+    "Shared-key wallets (Safe)": {
+      "members": 92,
+      "start": 391836527.64777744,
+      "end": 393268219.1508404,
+      "change": 1431691.5030629833,
+      "share_end_pct": 3.932682191508404
+    },
+    "Remaining contracts": {
+      "members": 14,
+      "start": 88566839.37098372,
+      "end": 92887768.19455896,
+      "change": 4320928.823575238,
+      "share_end_pct": 0.9288776819455896
+    },
+    "Contracts with no published code": {
+      "members": 40,
+      "start": 27949333.148100503,
+      "end": 27953880.397110768,
+      "change": 4547.249010262162,
+      "share_end_pct": 0.27953880397110764
+    },
+    "Exchange liquidity pools": {
+      "members": 11,
+      "start": 9120754.54734552,
+      "end": 10619607.731861228,
+      "change": 1498853.184515708,
+      "share_end_pct": 0.10619607731861228
+    },
+    "Reward reserve in the Reddex pools": {
+      "members": 2,
+      "start": 3299174.6173063344,
+      "end": 3525544.694634995,
+      "change": 226370.07732866082,
+      "share_end_pct": 0.03525544694634995
+    },
+    "Other staking programs": {
+      "members": 7,
+      "start": 3818.6354654476645,
+      "end": 3818.6354654476645,
+      "change": 0.0,
+      "share_end_pct": 3.818635465447664e-05
+    },
+    "Excess RBNT in the WRBNT contract": {
+      "members": 0,
+      "start": 0.0,
+      "end": 0.0,
+      "change": 0.0,
+      "share_end_pct": 0.0
+    },
+    "Not reached by the scan": {
+      "members": "",
+      "start": 36473.869585714296,
+      "end": 36485.21453063615,
+      "change": 11.344944921854449,
+      "share_end_pct": 0.00036485214530636154
+    }
+  },
+  "bands": [
+    {
+      "band": "1 up to 100",
+      "wallets_start": 47609,
+      "wallets_end": 47674,
+      "rbnt_start": 543082.201106633,
+      "rbnt_end": 544466.1668828208
+    },
+    {
+      "band": "100 up to 1,000",
+      "wallets_start": 2387,
+      "wallets_end": 2448,
+      "rbnt_start": 704847.6243107026,
+      "rbnt_end": 721079.205977551
+    },
+    {
+      "band": "1,000 up to 10,000",
+      "wallets_start": 1177,
+      "wallets_end": 1209,
+      "rbnt_start": 4536394.437049579,
+      "rbnt_end": 4616529.392835135
+    },
+    {
+      "band": "10,000 up to 100,000",
+      "wallets_start": 1226,
+      "wallets_end": 1228,
+      "rbnt_start": 42928600.72846286,
+      "rbnt_end": 43262542.078250065
+    },
+    {
+      "band": "100,000 up to 1 million",
+      "wallets_start": 818,
+      "wallets_end": 810,
+      "rbnt_start": 243421510.769085,
+      "rbnt_end": 246222043.43567958
+    },
+    {
+      "band": "1 million up to 10 million",
+      "wallets_start": 180,
+      "wallets_end": 183,
+      "rbnt_start": 467012594.68431365,
+      "rbnt_end": 487522039.02557784
+    },
+    {
+      "band": "10 million or more",
+      "wallets_start": 21,
+      "wallets_end": 23,
+      "rbnt_start": 1060403622.1792215,
+      "rbnt_end": 1175735412.1017659
+    }
+  ],
+  "dust_wallets": {
+    "30 Jun 2026": 111395,
+    "31 Jul 2026": 111426,
+    "31 Aug 2026": 111455,
+    "30 Sep 2026": 111509
+  },
+  "concentration": {
+    "30 Jun 2026": {
+      "wallets": 53418,
+      "rbnt": 1819550652.62355,
+      "top10": 47.45989530672492,
+      "top100": 75.76135190866363,
+      "top1000": 97.21788809157891,
+      "top1pct": 93.15675658411244,
+      "to_half": 12,
+      "gini": 0.9950801397708565,
+      "median": 5.836693333335311
+    },
+    "31 Jul 2026": {
+      "wallets": 53476,
+      "rbnt": 1841192759.9137866,
+      "top10": 47.390463420305615,
+      "top100": 75.76326190704344,
+      "top1000": 97.21016445398874,
+      "top1pct": 93.12364161806269,
+      "to_half": 12,
+      "gini": 0.9950767008669956,
+      "median": 5.83670476
+    },
+    "31 Aug 2026": {
+      "wallets": 53536,
+      "rbnt": 1942733447.1835482,
+      "top10": 48.46753347732767,
+      "top100": 76.61499745929686,
+      "top1000": 97.37745700734935,
+      "top1pct": 93.50936270431419,
+      "to_half": 11,
+      "gini": 0.995298463241699,
+      "median": 5.836782857144816
+    },
+    "30 Sep 2026": {
+      "wallets": 53575,
+      "rbnt": 1958624111.4069688,
+      "top10": 48.41534602590008,
+      "top100": 76.65485882885295,
+      "top1000": 97.40889154057287,
+      "top1pct": 93.54627531922436,
+      "to_half": 12,
+      "gini": 0.9953180196437698,
+      "median": 5.836904761906739
+    }
+  },
+  "cohorts": [
+    {
+      "cohort": "1 up to 100",
+      "wallets": 47609,
+      "start": 543082.201106633,
+      "end": 18524321.31348807,
+      "net": 17981239.11238144,
+      "up": 71,
+      "flat": 47447,
+      "down": 35,
+      "emptied": 56
+    },
+    {
+      "cohort": "100 up to 1,000",
+      "wallets": 2387,
+      "start": 704847.6243107026,
+      "end": 1111767.213236665,
+      "net": 406919.5889259624,
+      "up": 42,
+      "flat": 2290,
+      "down": 49,
+      "emptied": 6
+    },
+    {
+      "cohort": "1,000 up to 10,000",
+      "wallets": 1177,
+      "start": 4536394.437049579,
+      "end": 5135082.0214926815,
+      "net": 598687.5844431019,
+      "up": 44,
+      "flat": 1072,
+      "down": 55,
+      "emptied": 6
+    },
+    {
+      "cohort": "10,000 up to 100,000",
+      "wallets": 1226,
+      "start": 42928600.72846286,
+      "end": 104388946.1014581,
+      "net": 61460345.37299525,
+      "up": 92,
+      "flat": 1075,
+      "down": 54,
+      "emptied": 5
+    },
+    {
+      "cohort": "100,000 up to 1 million",
+      "wallets": 818,
+      "start": 243421510.769085,
+      "end": 248350645.53559354,
+      "net": 4929134.766508551,
+      "up": 119,
+      "flat": 650,
+      "down": 38,
+      "emptied": 11
+    },
+    {
+      "cohort": "1 million up to 10 million",
+      "wallets": 180,
+      "start": 467012594.68431365,
+      "end": 477307151.9561768,
+      "net": 10294557.271863122,
+      "up": 60,
+      "flat": 109,
+      "down": 9,
+      "emptied": 2
+    },
+    {
+      "cohort": "10 million or more",
+      "wallets": 21,
+      "start": 1060403622.1792215,
+      "end": 1090995450.3484712,
+      "net": 30591828.169249624,
+      "up": 9,
+      "flat": 7,
+      "down": 5,
+      "emptied": 0
+    },
+    {
+      "cohort": "Under 1 on 30 June",
+      "wallets": 243,
+      "start": 7.48441393437732,
+      "end": 12810791.235865854,
+      "net": 12810783.751451919,
+      "up": "",
+      "flat": "",
+      "down": "",
+      "emptied": ""
+    }
+  ],
+  "transitions": {
+    "labels": [
+      "Under 1",
+      "1 up to 100",
+      "100 up to 1,000",
+      "1,000 up to 10,000",
+      "10,000 up to 100,000",
+      "100,000 up to 1 million",
+      "1 million up to 10 million",
+      "10 million or more"
+    ],
+    "grid": [
+      [
+        "Under 1",
+        0,
+        79,
+        73,
+        37,
+        34,
+        17,
+        "<5",
+        0
+      ],
+      [
+        "1 up to 100",
+        56,
+        47526,
+        13,
+        5,
+        5,
+        "<5",
+        "<5",
+        "<5"
+      ],
+      [
+        "100 up to 1,000",
+        6,
+        20,
+        2335,
+        17,
+        9,
+        0,
+        0,
+        0
+      ],
+      [
+        "1,000 up to 10,000",
+        6,
+        12,
+        12,
+        1131,
+        14,
+        "<5",
+        0,
+        0
+      ],
+      [
+        "10,000 up to 100,000",
+        5,
+        24,
+        7,
+        14,
+        1156,
+        18,
+        "<5",
+        "<5"
+      ],
+      [
+        "100,000 up to 1 million",
+        11,
+        10,
+        6,
+        5,
+        9,
+        770,
+        7,
+        0
+      ],
+      [
+        "1 million up to 10 million",
+        "<5",
+        "<5",
+        "<5",
+        0,
+        "<5",
+        "<5",
+        170,
+        "<5"
+      ],
+      [
+        "10 million or more",
+        0,
+        "<5",
+        0,
+        0,
+        0,
+        0,
+        "<5",
+        19
+      ]
+    ]
+  },
+  "ranks": [
+    {
+      "group": "Top 10",
+      "wallets": 10,
+      "start": 863556834.7879668,
+      "end": 882860171.7625087,
+      "net": 19303336.974541835,
+      "pct": 2.235329071222217,
+      "up": 4,
+      "flat": 4,
+      "down": 2,
+      "emptied": 0,
+      "in_wallet_start": 628318277.9532877,
+      "in_wallet_end": 621528984.0369065,
+      "wrapped_start": 50636666.3299413,
+      "wrapped_end": 50637409.189487144,
+      "staked_start": 184601890.50473785,
+      "staked_end": 210693778.53611505
+    },
+    {
+      "group": "Next 90",
+      "wallets": 90,
+      "start": 514959338.30254644,
+      "end": 540931016.7126178,
+      "net": 25971678.410071313,
+      "pct": 5.043442555228031,
+      "up": 39,
+      "flat": 45,
+      "down": 5,
+      "emptied": 1,
+      "in_wallet_start": 189363165.22308463,
+      "in_wallet_end": 187872594.11206484,
+      "wrapped_start": 12192914.263747465,
+      "wrapped_end": 12969645.593986433,
+      "staked_start": 313403258.81571436,
+      "staked_end": 340088777.0065665
+    },
+    {
+      "group": "Next 900",
+      "wallets": 900,
+      "start": 390412544.14664304,
+      "end": 390830089.73285085,
+      "net": 417545.5862078036,
+      "pct": 0.10694983869446804,
+      "up": 143,
+      "flat": 701,
+      "down": 44,
+      "emptied": 12,
+      "in_wallet_start": 253104626.28339997,
+      "in_wallet_end": 248081023.83381498,
+      "wrapped_start": 9415346.685830994,
+      "wrapped_end": 11207352.204660015,
+      "staked_start": 127892571.1774121,
+      "staked_end": 131541713.69437584
+    },
+    {
+      "group": "Everyone else",
+      "wallets": 52418,
+      "start": 50621935.38639356,
+      "end": 131192086.28193966,
+      "net": 80570150.8955461,
+      "pct": 159.1605502250358,
+      "up": 251,
+      "flat": 51900,
+      "down": 194,
+      "emptied": 73,
+      "in_wallet_start": 38629613.51476459,
+      "in_wallet_end": 47339475.391183786,
+      "wrapped_start": 2126896.9215182494,
+      "wrapped_end": 19310152.350893706,
+      "staked_start": 9865424.95011072,
+      "staked_end": 64542458.539862156
+    }
+  ],
+  "pools": {
+    "Reddex no lock pool": {
+      "rbnt_start": 360594599.05372727,
+      "rbnt_end": 443228206.0028954,
+      "rbnt_change": 82633606.94916812,
+      "rbnt_change_pct": 22.915930290141702,
+      "staked_start": 358606856.2784972,
+      "staked_end": 440677249.9092804,
+      "staked_change": 82070393.6307832,
+      "reserve_start": 1987742.7752300724,
+      "reserve_end": 2550956.0936149894,
+      "stakers_start": 1156,
+      "stakers_end": 1140,
+      "joined": 13,
+      "left": 29,
+      "stakes": 262,
+      "staked_in": 132965676.60653311,
+      "withdrawals": 102,
+      "withdrawn": 50895282.97574991,
+      "claims": 512,
+      "claimed": 4436786.6816150835,
+      "top_ups": 5000000.0
+    },
+    "Reddex 365 day pool": {
+      "rbnt_start": 278467723.84535205,
+      "rbnt_end": 311548346.16136914,
+      "rbnt_change": 33080622.31601713,
+      "rbnt_change_pct": 11.879517618490162,
+      "staked_start": 277156292.00327575,
+      "staked_end": 310573757.56034917,
+      "staked_change": 33417465.557073385,
+      "reserve_start": 1311431.8420762618,
+      "reserve_end": 974588.6010200058,
+      "stakers_start": 223,
+      "stakers_end": 217,
+      "joined": 6,
+      "left": 12,
+      "stakes": 227,
+      "staked_in": 63401240.22230018,
+      "withdrawals": 51,
+      "withdrawn": 29983774.665226795,
+      "claims": 523,
+      "claimed": 10336843.241056256,
+      "top_ups": 10000000.0
+    },
+    "both": {
+      "rbnt_start": 639062322.8990793,
+      "rbnt_end": 754776552.1642646,
+      "change_pct": 18.106877078944745,
+      "staked_start": 635763148.281773,
+      "staked_end": 751251007.4696295,
+      "wallet_share_staked_start": 34.940208657635885,
+      "wallet_share_staked_end": 38.35558863859752
+    }
+  },
+  "unlocks": [
+    [
+      "Already past its lock",
+      510,
+      94763266.57343942
+    ],
+    [
+      "2026-10",
+      139,
+      17501515.410346884
+    ],
+    [
+      "2026-11",
+      124,
+      35241472.63092546
+    ],
+    [
+      "2026-12",
+      108,
+      22142823.193969566
+    ],
+    [
+      "2027-01",
+      102,
+      17406222.91965152
+    ],
+    [
+      "2027-02",
+      68,
+      13514008.681480452
+    ],
+    [
+      "2027-03",
+      80,
+      8759802.842877906
+    ],
+    [
+      "2027-04",
+      61,
+      8738193.546815109
+    ],
+    [
+      "2027-05",
+      60,
+      5174100.871178443
+    ],
+    [
+      "2027-06",
+      81,
+      23931110.667364202
+    ],
+    [
+      "2027-07",
+      69,
+      16539122.331328467
+    ],
+    [
+      "2027-08",
+      102,
+      36745123.18036932
+    ],
+    [
+      "2027-09",
+      56,
+      10116994.710602397
+    ]
+  ],
+  "named": {
+    "Team (Locked)": {
+      "start": 333909314.0,
+      "end": 333909314.0,
+      "change": 0.0,
+      "in": 0.0,
+      "out": 0.0,
+      "fees": 0.0
+    },
+    "Governance (Locked)": {
+      "start": 133333334.0,
+      "end": 100000001.0,
+      "change": -33333333.0,
+      "in": 0.0,
+      "out": 33333333.0,
+      "fees": 0.0
+    },
+    "Governance (Unlocked)": {
+      "start": 66666756.0,
+      "end": 100000089.0,
+      "change": 33333333.0,
+      "in": 33333333.0,
+      "out": 0.0,
+      "fees": 0.0
+    },
+    "USYD/CSIRO (Locked)": {
+      "start": 200000000.0,
+      "end": 200000000.0,
+      "change": 0.0,
+      "in": 0.0,
+      "out": 0.0,
+      "fees": 0.0
+    },
+    "Investors": {
+      "start": 0.0,
+      "end": 253115670.0,
+      "change": 253115670.0,
+      "in": 253115670.0,
+      "out": 0.0,
+      "fees": 0.0
+    },
+    "Reserve": {
+      "start": 2000000000.0,
+      "end": 2000000000.0,
+      "change": 0.0,
+      "in": 0.0,
+      "out": 0.0,
+      "fees": 0.0
+    },
+    "Ecosystem (Locked)": {
+      "start": 2794132788.0,
+      "end": 2294132788.0,
+      "change": -500000000.0,
+      "in": 0.0,
+      "out": 500000000.0,
+      "fees": 0.0
+    },
+    "Ecosystem 2 (Unlocked)": {
+      "start": 377838567.0,
+      "end": 624722897.0,
+      "change": 246884330.0,
+      "in": 500000000.0,
+      "out": 253115670.0,
+      "fees": 0.0
+    },
+    "Ecosystem (Unlocked)": {
+      "start": 68892664.47440696,
+      "end": 25080271.244353283,
+      "change": -43812393.23005367,
+      "in": 0.0,
+      "out": 43796669.0,
+      "fees": 15724.23005367072
+    },
+    "Wrapped RBNT (WRBNT)": {
+      "start": 1819066450.6643624,
+      "end": 1736902022.3492532,
+      "change": -82164428.31510931,
+      "in": 38674775.74146903,
+      "out": 120839204.05657835,
+      "fees": 0.0
+    },
+    "Reddex RBNT staking pool, no lock": {
+      "start": 360594599.05372727,
+      "end": 443228206.0028954,
+      "change": 82633606.94916812,
+      "in": 137965676.6065331,
+      "out": 55332069.657364994,
+      "fees": 0.0
+    },
+    "Reddex RBNT staking pool, 365 day lock": {
+      "start": 278467723.84535205,
+      "end": 311548346.16136914,
+      "change": 33080622.31601713,
+      "in": 73401240.22230017,
+      "out": 40320617.90628305,
+      "fees": 0.0
+    }
+  },
+  "counterparties": [
+    {
+      "wallet": "Governance (Locked)",
+      "party": "Governance (Unlocked)",
+      "in": 0.0,
+      "in_n": 0,
+      "out": 33333333.0,
+      "out_n": 1
+    },
+    {
+      "wallet": "Governance (Unlocked)",
+      "party": "Governance (Locked)",
+      "in": 33333333.0,
+      "in_n": 1,
+      "out": 0.0,
+      "out_n": 0
+    },
+    {
+      "wallet": "Investors",
+      "party": "Ecosystem 2 (Unlocked)",
+      "in": 253115670.0,
+      "in_n": 1,
+      "out": 0.0,
+      "out_n": 0
+    },
+    {
+      "wallet": "Ecosystem (Locked)",
+      "party": "Ecosystem 2 (Unlocked)",
+      "in": 0.0,
+      "in_n": 0,
+      "out": 500000000.0,
+      "out_n": 1
+    },
+    {
+      "wallet": "Ecosystem 2 (Unlocked)",
+      "party": "Ecosystem (Locked)",
+      "in": 500000000.0,
+      "in_n": 1,
+      "out": 0.0,
+      "out_n": 0
+    },
+    {
+      "wallet": "Ecosystem 2 (Unlocked)",
+      "party": "Investors",
+      "in": 0.0,
+      "in_n": 0,
+      "out": 253115670.0,
+      "out_n": 1
+    },
+    {
+      "wallet": "Ecosystem (Unlocked)",
+      "party": "WRBNT contract",
+      "in": 0.0,
+      "in_n": 0,
+      "out": 25100000.0,
+      "out_n": 2
+    },
+    {
+      "wallet": "Ecosystem (Unlocked)",
+      "party": "Reddex 365 day pool",
+      "in": 0.0,
+      "in_n": 0,
+      "out": 10000000.0,
+      "out_n": 2
+    },
+    {
+      "wallet": "Ecosystem (Unlocked)",
+      "party": "Reddex no lock pool",
+      "in": 0.0,
+      "in_n": 0,
+      "out": 5000000.0,
+      "out_n": 3
+    },
+    {
+      "wallet": "Ecosystem (Unlocked)",
+      "party": "Unnamed wallets",
+      "in": 0.0,
+      "in_n": 0,
+      "out": 3496669.0,
+      "out_n": 22
+    },
+    {
+      "wallet": "Ecosystem (Unlocked)",
+      "party": "Remaining contracts",
+      "in": 0.0,
+      "in_n": 0,
+      "out": 200000.0,
+      "out_n": 2
+    },
+    {
+      "wallet": "Wrapped RBNT (WRBNT)",
+      "party": "Unnamed wallets",
+      "in": 6838165.368245265,
+      "in_n": 68,
+      "out": 115929870.14938171,
+      "out_n": 1170
+    },
+    {
+      "wallet": "Wrapped RBNT (WRBNT)",
+      "party": "Ecosystem (Unlocked)",
+      "in": 25100000.0,
+      "in_n": 2,
+      "out": 0.0,
+      "out_n": 0
+    },
+    {
+      "wallet": "Wrapped RBNT (WRBNT)",
+      "party": "Contracts with no published code",
+      "in": 6087100.373223769,
+      "in_n": 163,
+      "out": 4538956.648156456,
+      "out_n": 93
+    },
+    {
+      "wallet": "Wrapped RBNT (WRBNT)",
+      "party": "Remaining contracts",
+      "in": 649510.0,
+      "in_n": 7,
+      "out": 370377.25904018787,
+      "out_n": 5
+    },
+    {
+      "wallet": "Reddex RBNT staking pool, no lock",
+      "party": "Unnamed wallets",
+      "in": 132965676.60653311,
+      "in_n": 262,
+      "out": 55332069.657364994,
+      "out_n": 614
+    },
+    {
+      "wallet": "Reddex RBNT staking pool, no lock",
+      "party": "Ecosystem (Unlocked)",
+      "in": 5000000.0,
+      "in_n": 3,
+      "out": 0.0,
+      "out_n": 0
+    },
+    {
+      "wallet": "Reddex RBNT staking pool, 365 day lock",
+      "party": "Unnamed wallets",
+      "in": 63401240.22230018,
+      "in_n": 227,
+      "out": 40320617.90628305,
+      "out_n": 574
+    },
+    {
+      "wallet": "Reddex RBNT staking pool, 365 day lock",
+      "party": "Ecosystem (Unlocked)",
+      "in": 10000000.0,
+      "in_n": 2,
+      "out": 0.0,
+      "out_n": 0
+    }
+  ],
+  "exchange_tags": [],
+  "all_tags": [
+    "Wrapped RBNT"
+  ],
+  "reserved_wrbnt": [
+    {
+      "wallet": "Ecosystem (Unlocked)",
+      "movement": "WRBNT received",
+      "party": "Token vesting contracts",
+      "amount": 9613167.21816962,
+      "n": 1
+    },
+    {
+      "wallet": "Ecosystem (Unlocked)",
+      "movement": "WRBNT sent",
+      "party": "Token vesting contracts",
+      "amount": 34720848.0,
+      "n": 4
+    },
+    {
+      "wallet": "Ecosystem (Unlocked)",
+      "movement": "Wrapped RBNT",
+      "party": "",
+      "amount": 25100000.0,
+      "n": 2
+    }
+  ],
+  "group_flows": [
+    {
+      "from": "Redbelly reserved wallets",
+      "to": "Redbelly reserved wallets",
+      "rbnt": 786449003.0,
+      "wrbnt": 0.0,
+      "together": 786449003.0,
+      "transfers": 3
+    },
+    {
+      "from": "Unnamed wallets",
+      "to": "Unnamed wallets",
+      "rbnt": 553537464.6212856,
+      "wrbnt": 1597425.9626789503,
+      "together": 555134890.5839645,
+      "transfers": 4409
+    },
+    {
+      "from": "Unnamed wallets",
+      "to": "Reddex staking pools",
+      "rbnt": 196366916.82883328,
+      "wrbnt": 0.0,
+      "together": 196366916.82883328,
+      "transfers": 489
+    },
+    {
+      "from": "Token vesting contracts",
+      "to": "Unnamed wallets",
+      "rbnt": 0.0,
+      "wrbnt": 127843546.31004865,
+      "together": 127843546.31004865,
+      "transfers": 1885
+    },
+    {
+      "from": "WRBNT contract",
+      "to": "Unnamed wallets",
+      "rbnt": 115929870.14938171,
+      "wrbnt": 0.0,
+      "together": 115929870.14938171,
+      "transfers": 1170
+    },
+    {
+      "from": "Reddex staking pools",
+      "to": "Unnamed wallets",
+      "rbnt": 95652687.56364805,
+      "wrbnt": 0.0,
+      "together": 95652687.56364805,
+      "transfers": 1188
+    },
+    {
+      "from": "Redbelly reserved wallets",
+      "to": "Token vesting contracts",
+      "rbnt": 0.0,
+      "wrbnt": 34720848.0,
+      "together": 34720848.0,
+      "transfers": 4
+    },
+    {
+      "from": "Contracts with no published code",
+      "to": "Contracts with no published code",
+      "rbnt": 25623047.05290929,
+      "wrbnt": 0.0,
+      "together": 25623047.05290929,
+      "transfers": 1115
+    },
+    {
+      "from": "Redbelly reserved wallets",
+      "to": "WRBNT contract",
+      "rbnt": 25100000.0,
+      "wrbnt": 0.0,
+      "together": 25100000.0,
+      "transfers": 2
+    },
+    {
+      "from": "Redbelly reserved wallets",
+      "to": "Reddex staking pools",
+      "rbnt": 15000000.0,
+      "wrbnt": 0.0,
+      "together": 15000000.0,
+      "transfers": 5
+    },
+    {
+      "from": "Remaining contracts",
+      "to": "Unnamed wallets",
+      "rbnt": 4954112.346521653,
+      "wrbnt": 8185206.3282951685,
+      "together": 13139318.67481682,
+      "transfers": 151
+    },
+    {
+      "from": "Unnamed wallets",
+      "to": "Contracts with no published code",
+      "rbnt": 4124818.261462954,
+      "wrbnt": 7014644.500914833,
+      "together": 11139462.762377786,
+      "transfers": 939
+    },
+    {
+      "from": "Unnamed wallets",
+      "to": "Remaining contracts",
+      "rbnt": 9946375.314887684,
+      "wrbnt": 304171.7113592201,
+      "together": 10250547.026246903,
+      "transfers": 108
+    },
+    {
+      "from": "Token vesting contracts",
+      "to": "Redbelly reserved wallets",
+      "rbnt": 0.0,
+      "wrbnt": 9613167.21816962,
+      "together": 9613167.21816962,
+      "transfers": 1
+    },
+    {
+      "from": "Exchange liquidity pools",
+      "to": "Contracts with no published code",
+      "rbnt": 2110886.4192181975,
+      "wrbnt": 6718420.753741761,
+      "together": 8829307.17295996,
+      "transfers": 310
+    },
+    {
+      "from": "Contracts with no published code",
+      "to": "Exchange liquidity pools",
+      "rbnt": 1091070.6904165572,
+      "wrbnt": 7718641.566747682,
+      "together": 8809712.25716424,
+      "transfers": 290
+    },
+    {
+      "from": "Contracts with no published code",
+      "to": "Remaining contracts",
+      "rbnt": 141123.78889884194,
+      "wrbnt": 6884044.500914833,
+      "together": 7025168.289813674,
+      "transfers": 799
+    },
+    {
+      "from": "Unnamed wallets",
+      "to": "WRBNT contract",
+      "rbnt": 6838165.368245265,
+      "wrbnt": 0.0,
+      "together": 6838165.368245265,
+      "transfers": 68
+    },
+    {
+      "from": "Contracts with no published code",
+      "to": "WRBNT contract",
+      "rbnt": 6087100.373223769,
+      "wrbnt": 0.0,
+      "together": 6087100.373223769,
+      "transfers": 163
+    },
+    {
+      "from": "WRBNT contract",
+      "to": "Contracts with no published code",
+      "rbnt": 4538956.648156456,
+      "wrbnt": 0.0,
+      "together": 4538956.648156456,
+      "transfers": 93
+    },
+    {
+      "from": "Contracts with no published code",
+      "to": "Unnamed wallets",
+      "rbnt": 3509641.7541697,
+      "wrbnt": 633848.2028483874,
+      "together": 4143489.9570180876,
+      "transfers": 818
+    },
+    {
+      "from": "Unnamed wallets",
+      "to": "Exchange liquidity pools",
+      "rbnt": 2112814.1386034614,
+      "wrbnt": 1790383.5940986401,
+      "together": 3903197.7327021016,
+      "transfers": 137
+    },
+    {
+      "from": "Redbelly reserved wallets",
+      "to": "Unnamed wallets",
+      "rbnt": 3496669.0,
+      "wrbnt": 0.0,
+      "together": 3496669.0,
+      "transfers": 22
+    },
+    {
+      "from": "Exchange liquidity pools",
+      "to": "Unnamed wallets",
+      "rbnt": 1091399.5444851613,
+      "wrbnt": 1293350.0879055134,
+      "together": 2384749.6323906747,
+      "transfers": 46
+    },
+    {
+      "from": "Remaining contracts",
+      "to": "WRBNT contract",
+      "rbnt": 649510.0,
+      "wrbnt": 0.0,
+      "together": 649510.0,
+      "transfers": 7
+    },
+    {
+      "from": "Exchange liquidity pools",
+      "to": "Exchange liquidity pools",
+      "rbnt": 0.0,
+      "wrbnt": 387646.82647229626,
+      "together": 387646.82647229626,
+      "transfers": 11
+    },
+    {
+      "from": "WRBNT contract",
+      "to": "Remaining contracts",
+      "rbnt": 370377.25904018787,
+      "wrbnt": 0.0,
+      "together": 370377.25904018787,
+      "transfers": 5
+    },
+    {
+      "from": "Redbelly reserved wallets",
+      "to": "Remaining contracts",
+      "rbnt": 200000.0,
+      "wrbnt": 0.0,
+      "together": 200000.0,
+      "transfers": 2
+    },
+    {
+      "from": "Remaining contracts",
+      "to": "Contracts with no published code",
+      "rbnt": 15467.817668518821,
+      "wrbnt": 0.0,
+      "together": 15467.817668518821,
+      "transfers": 145
+    },
+    {
+      "from": "Contracts with no published code",
+      "to": "Shared-key wallets (Safe)",
+      "rbnt": 1320.0,
+      "wrbnt": 0.0,
+      "together": 1320.0,
+      "transfers": 132
+    }
+  ],
+  "chain_work": {
+    "blocks_read": 3209415,
+    "addresses_found": 761594,
+    "inner_transfer_rows": 1753030,
+    "explorer_rows_read": 20000,
+    "quarter_transactions": 256844,
+    "quarter_fees_rbnt": 1999924.3489305226
+  },
+  "checks": [
+    {
+      "check": "30 Jun 2026: the WRBNT supply equals the sum of every WRBNT balance",
+      "held": true,
+      "detail": "1819066450664362528731693248 1819066450664362528731693248"
+    },
+    {
+      "check": "30 Jun 2026: the WRBNT contract holds at least as much RBNT as the WRBNT supply",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Jun 2026: stakes in the Reddex no lock pool add up to its totalStake",
+      "held": true,
+      "detail": "358606856278497202980081927 358606856278497202980081927"
+    },
+    {
+      "check": "30 Jun 2026: the Reddex no lock pool holds at least its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Jun 2026: stakes in the Reddex 365 day pool add up to its totalStake",
+      "held": true,
+      "detail": "277156292003275765927408000 277156292003275765927408000"
+    },
+    {
+      "check": "30 Jun 2026: the Reddex 365 day pool holds at least its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Jun 2026: balances found cover more than 99.99% of supply",
+      "held": true,
+      "detail": "99.999635%"
+    },
+    {
+      "check": "30 Jun 2026: balances found do not exceed supply",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Jul 2026: the WRBNT supply equals the sum of every WRBNT balance",
+      "held": true,
+      "detail": "1805084451880670869731761477 1805084451880670869731761477"
+    },
+    {
+      "check": "31 Jul 2026: the WRBNT contract holds at least as much RBNT as the WRBNT supply",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Jul 2026: stakes in the Reddex no lock pool add up to its totalStake",
+      "held": true,
+      "detail": "363681873449709050192011927 363681873449709050192011927"
+    },
+    {
+      "check": "31 Jul 2026: the Reddex no lock pool holds at least its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Jul 2026: stakes in the Reddex 365 day pool add up to its totalStake",
+      "held": true,
+      "detail": "281236585720604728263038000 281236585720604728263038000"
+    },
+    {
+      "check": "31 Jul 2026: the Reddex 365 day pool holds at least its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Jul 2026: balances found cover more than 99.99% of supply",
+      "held": true,
+      "detail": "99.999635%"
+    },
+    {
+      "check": "31 Jul 2026: balances found do not exceed supply",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Aug 2026: the WRBNT supply equals the sum of every WRBNT balance",
+      "held": true,
+      "detail": "1724810603323827226929995979 1724810603323827226929995979"
+    },
+    {
+      "check": "31 Aug 2026: the WRBNT contract holds at least as much RBNT as the WRBNT supply",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Aug 2026: stakes in the Reddex no lock pool add up to its totalStake",
+      "held": true,
+      "detail": "436774953934265616159541927 436774953934265616159541927"
+    },
+    {
+      "check": "31 Aug 2026: the Reddex no lock pool holds at least its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Aug 2026: stakes in the Reddex 365 day pool add up to its totalStake",
+      "held": true,
+      "detail": "302869369892179677412468000 302869369892179677412468000"
+    },
+    {
+      "check": "31 Aug 2026: the Reddex 365 day pool holds at least its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Aug 2026: balances found cover more than 99.99% of supply",
+      "held": true,
+      "detail": "99.999635%"
+    },
+    {
+      "check": "31 Aug 2026: balances found do not exceed supply",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Sep 2026: the WRBNT supply equals the sum of every WRBNT balance",
+      "held": true,
+      "detail": "1736902022349253212366854789 1736902022349253212366854789"
+    },
+    {
+      "check": "30 Sep 2026: the WRBNT contract holds at least as much RBNT as the WRBNT supply",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Sep 2026: stakes in the Reddex no lock pool add up to its totalStake",
+      "held": true,
+      "detail": "440677249909280400380641927 440677249909280400380641927"
+    },
+    {
+      "check": "30 Sep 2026: the Reddex no lock pool holds at least its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Sep 2026: stakes in the Reddex 365 day pool add up to its totalStake",
+      "held": true,
+      "detail": "310573757560349148979068000 310573757560349148979068000"
+    },
+    {
+      "check": "30 Sep 2026: the Reddex 365 day pool holds at least its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Sep 2026: balances found cover more than 99.99% of supply",
+      "held": true,
+      "detail": "99.999635%"
+    },
+    {
+      "check": "30 Sep 2026: balances found do not exceed supply",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Jun 2026: holdings add up to the RBNT found",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Jul 2026: holdings add up to the RBNT found",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "31 Aug 2026: holdings add up to the RBNT found",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "30 Sep 2026: holdings add up to the RBNT found",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "The group 'Token vesting contracts' has at least 5 members",
+      "held": true,
+      "detail": "18"
+    },
+    {
+      "check": "The group 'Shared-key wallets (Safe)' has at least 5 members",
+      "held": true,
+      "detail": "92"
+    },
+    {
+      "check": "The group 'Remaining contracts' has at least 5 members",
+      "held": true,
+      "detail": "14"
+    },
+    {
+      "check": "The group 'Contracts with no published code' has at least 5 members",
+      "held": true,
+      "detail": "40"
+    },
+    {
+      "check": "The group 'Exchange liquidity pools' has at least 5 members",
+      "held": true,
+      "detail": "11"
+    },
+    {
+      "check": "The group 'Other staking programs' has at least 5 members",
+      "held": true,
+      "detail": "7"
+    },
+    {
+      "check": "Changes across all groups net to the change in RBNT found",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "Reddex no lock pool: RBNT in Stake records minus Unstake records equals the change in totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "Reddex 365 day pool: RBNT in Stake records minus Unstake records equals the change in totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "The unlock schedule of the 365 day pool adds up to its totalStake",
+      "held": true,
+      "detail": ""
+    },
+    {
+      "check": "Team (Locked): start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Governance (Locked): start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Governance (Unlocked): start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "USYD/CSIRO (Locked): start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Investors: start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Reserve: start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Ecosystem (Locked): start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Ecosystem 2 (Unlocked): start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Ecosystem (Unlocked): start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Wrapped RBNT (WRBNT): start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Reddex RBNT staking pool, no lock: start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    },
+    {
+      "check": "Reddex RBNT staking pool, 365 day lock: start + RBNT in - RBNT out - fees = end",
+      "held": true,
+      "detail": "gap 0 wei"
+    }
+  ],
+  "tables": [
+    "supply_reconciliation.csv",
+    "location_by_place.csv",
+    "holdings_by_group.csv",
+    "size_bands.csv",
+    "concentration_measures.csv",
+    "lorenz_points.csv",
+    "cohort_outcomes.csv",
+    "band_transitions.csv",
+    "rank_groups.csv",
+    "pools_daily.csv",
+    "pools_summary.csv",
+    "stake_size_bands.csv",
+    "unlock_schedule_365.csv",
+    "named_balances.csv",
+    "named_counterparties.csv",
+    "reserved_wrbnt.csv",
+    "group_flows.csv",
+    "reserved_daily.csv"
+  ]
+}

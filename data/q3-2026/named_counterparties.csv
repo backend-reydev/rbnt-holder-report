@@ -1,0 +1,20 @@
+named_wallet,counterparty,rbnt_in,transfers_in,rbnt_out,transfers_out
+Governance (Locked),Governance (Unlocked),0.000000,0,33333333.000000,1
+Governance (Unlocked),Governance (Locked),33333333.000000,1,0.000000,0
+Investors,Ecosystem 2 (Unlocked),253115670.000000,1,0.000000,0
+Ecosystem (Locked),Ecosystem 2 (Unlocked),0.000000,0,500000000.000000,1
+Ecosystem 2 (Unlocked),Ecosystem (Locked),500000000.000000,1,0.000000,0
+Ecosystem 2 (Unlocked),Investors,0.000000,0,253115670.000000,1
+Ecosystem (Unlocked),WRBNT contract,0.000000,0,25100000.000000,2
+Ecosystem (Unlocked),Reddex 365 day pool,0.000000,0,10000000.000000,2
+Ecosystem (Unlocked),Reddex no lock pool,0.000000,0,5000000.000000,3
+Ecosystem (Unlocked),Unnamed wallets,0.000000,0,3496669.000000,22
+Ecosystem (Unlocked),Remaining contracts,0.000000,0,200000.000000,2
+Wrapped RBNT (WRBNT),Unnamed wallets,6838165.368245,68,115929870.149382,1170
+Wrapped RBNT (WRBNT),Ecosystem (Unlocked),25100000.000000,2,0.000000,0
+Wrapped RBNT (WRBNT),Contracts with no published code,6087100.373224,163,4538956.648156,93
+Wrapped RBNT (WRBNT),Remaining contracts,649510.000000,7,370377.259040,5
+"Reddex RBNT staking pool, no lock",Unnamed wallets,132965676.606533,262,55332069.657365,614
+"Reddex RBNT staking pool, no lock",Ecosystem (Unlocked),5000000.000000,3,0.000000,0
+"Reddex RBNT staking pool, 365 day lock",Unnamed wallets,63401240.222300,227,40320617.906283,574
+"Reddex RBNT staking pool, 365 day lock",Ecosystem (Unlocked),10000000.000000,2,0.000000,0

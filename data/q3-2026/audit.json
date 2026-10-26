@@ -1,0 +1,212 @@
+{
+  "ran": "2026-10-26 06:22 UTC",
+  "passed": 41,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "Team (Locked): rbnt_start read again from the node",
+      "passed": true,
+      "info": "333,909,314.000000"
+    },
+    {
+      "check": "Team (Locked): rbnt_end read again from the node",
+      "passed": true,
+      "info": "333,909,314.000000"
+    },
+    {
+      "check": "Governance (Locked): rbnt_start read again from the node",
+      "passed": true,
+      "info": "133,333,334.000000"
+    },
+    {
+      "check": "Governance (Locked): rbnt_end read again from the node",
+      "passed": true,
+      "info": "100,000,001.000000"
+    },
+    {
+      "check": "Governance (Unlocked): rbnt_start read again from the node",
+      "passed": true,
+      "info": "66,666,756.000000"
+    },
+    {
+      "check": "Governance (Unlocked): rbnt_end read again from the node",
+      "passed": true,
+      "info": "100,000,089.000000"
+    },
+    {
+      "check": "USYD/CSIRO (Locked): rbnt_start read again from the node",
+      "passed": true,
+      "info": "200,000,000.000000"
+    },
+    {
+      "check": "USYD/CSIRO (Locked): rbnt_end read again from the node",
+      "passed": true,
+      "info": "200,000,000.000000"
+    },
+    {
+      "check": "Investors: rbnt_start read again from the node",
+      "passed": true,
+      "info": "0.000000"
+    },
+    {
+      "check": "Investors: rbnt_end read again from the node",
+      "passed": true,
+      "info": "253,115,670.000000"
+    },
+    {
+      "check": "Reserve: rbnt_start read again from the node",
+      "passed": true,
+      "info": "2,000,000,000.000000"
+    },
+    {
+      "check": "Reserve: rbnt_end read again from the node",
+      "passed": true,
+      "info": "2,000,000,000.000000"
+    },
+    {
+      "check": "Ecosystem (Locked): rbnt_start read again from the node",
+      "passed": true,
+      "info": "2,794,132,788.000000"
+    },
+    {
+      "check": "Ecosystem (Locked): rbnt_end read again from the node",
+      "passed": true,
+      "info": "2,294,132,788.000000"
+    },
+    {
+      "check": "Ecosystem 2 (Unlocked): rbnt_start read again from the node",
+      "passed": true,
+      "info": "377,838,567.000000"
+    },
+    {
+      "check": "Ecosystem 2 (Unlocked): rbnt_end read again from the node",
+      "passed": true,
+      "info": "624,722,897.000000"
+    },
+    {
+      "check": "Ecosystem (Unlocked): rbnt_start read again from the node",
+      "passed": true,
+      "info": "68,892,664.474407"
+    },
+    {
+      "check": "Ecosystem (Unlocked): rbnt_end read again from the node",
+      "passed": true,
+      "info": "25,080,271.244353"
+    },
+    {
+      "check": "Wrapped RBNT (WRBNT): rbnt_start read again from the node",
+      "passed": true,
+      "info": "1,819,066,450.664362"
+    },
+    {
+      "check": "Wrapped RBNT (WRBNT): rbnt_end read again from the node",
+      "passed": true,
+      "info": "1,736,902,022.349253"
+    },
+    {
+      "check": "Reddex RBNT staking pool, no lock: rbnt_start read again from the node",
+      "passed": true,
+      "info": "360,594,599.053727"
+    },
+    {
+      "check": "Reddex RBNT staking pool, no lock: rbnt_end read again from the node",
+      "passed": true,
+      "info": "443,228,206.002895"
+    },
+    {
+      "check": "Reddex RBNT staking pool, 365 day lock: rbnt_start read again from the node",
+      "passed": true,
+      "info": "278,467,723.845352"
+    },
+    {
+      "check": "Reddex RBNT staking pool, 365 day lock: rbnt_end read again from the node",
+      "passed": true,
+      "info": "311,548,346.161369"
+    },
+    {
+      "check": "Reddex no lock pool: total_stake_start read again from the node",
+      "passed": true,
+      "info": "358,606,856.278497"
+    },
+    {
+      "check": "Reddex no lock pool: total_stake_end read again from the node",
+      "passed": true,
+      "info": "440,677,249.909280"
+    },
+    {
+      "check": "Reddex 365 day pool: total_stake_start read again from the node",
+      "passed": true,
+      "info": "277,156,292.003276"
+    },
+    {
+      "check": "Reddex 365 day pool: total_stake_end read again from the node",
+      "passed": true,
+      "info": "310,573,757.560349"
+    },
+    {
+      "check": "WRBNT supply at block 3,025,809 read again from the node",
+      "passed": true,
+      "info": "1,819,066,450.664362"
+    },
+    {
+      "check": "WRBNT supply at block 3,209,414 read again from the node",
+      "passed": true,
+      "info": "1,736,902,022.349253"
+    },
+    {
+      "check": "600 cached balances picked at random match a fresh read",
+      "passed": true,
+      "info": "0 differ"
+    },
+    {
+      "check": "block 3,025,809 is the newest block before the start moment",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "block 3,209,414 is the newest block before the end moment",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "block 3,104,242 is the newest block before the month_2026-08-01 moment",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "block 3,161,410 is the newest block before the month_2026-09-01 moment",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "published files follow the 'address' rule",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "published files follow the 'dash' rule",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "published files follow the 'emoji' rule",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "published files follow the 'price' rule",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "published files follow the 'credit' rule",
+      "passed": true,
+      "info": ""
+    },
+    {
+      "check": "all 7 thread posts fit in 280 characters",
+      "passed": true,
+      "info": ""
+    }
+  ]
+}

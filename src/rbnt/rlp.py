@@ -1,46 +1,45 @@
-"""Minimal RLP decoder, enough to read addresses out of block extraData."""
+"""Just enough RLP decoding to pull 20-byte values out of block extraData,
+which is where Redbelly lists the governors that receive fees."""
 
 
-def decode(data, pos=0):
-    """Return (item, next_pos). Items are bytes or lists."""
-    b = data[pos]
-    if b < 0x80:
-        return data[pos:pos + 1], pos + 1
-    if b < 0xb8:
-        n = b - 0x80
-        return data[pos + 1:pos + 1 + n], pos + 1 + n
-    if b < 0xc0:
-        ln = b - 0xb7
-        n = int.from_bytes(data[pos + 1:pos + 1 + ln], "big")
-        start = pos + 1 + ln
-        return data[start:start + n], start + n
-    if b < 0xf8:
-        n, start = b - 0xc0, pos + 1
+def _item(raw, at):
+    lead = raw[at]
+    if lead < 0x80:
+        return raw[at:at + 1], at + 1
+    if lead < 0xb8:
+        end = at + 1 + lead - 0x80
+        return raw[at + 1:end], end
+    if lead < 0xc0:
+        size_len = lead - 0xb7
+        size = int.from_bytes(raw[at + 1:at + 1 + size_len], "big")
+        begin = at + 1 + size_len
+        return raw[begin:begin + size], begin + size
+    if lead < 0xf8:
+        size, begin = lead - 0xc0, at + 1
     else:
-        ln = b - 0xf7
-        n = int.from_bytes(data[pos + 1:pos + 1 + ln], "big")
-        start = pos + 1 + ln
-    items, p = [], start
-    while p < start + n:
-        item, p = decode(data, p)
-        items.append(item)
-    return items, start + n
+        size_len = lead - 0xf7
+        size = int.from_bytes(raw[at + 1:at + 1 + size_len], "big")
+        begin = at + 1 + size_len
+    children, cur = [], begin
+    while cur < begin + size:
+        child, cur = _item(raw, cur)
+        children.append(child)
+    return children, begin + size
 
 
-def addresses(extra_hex):
-    """Every 20-byte string anywhere in the RLP structure of extraData."""
-    raw = bytes.fromhex(extra_hex[2:])
+def twenty_byte_values(extra_data_hex):
+    raw = bytes.fromhex(extra_data_hex.removeprefix("0x"))
     if not raw:
         return []
     try:
-        item, _ = decode(raw)
+        tree, _ = _item(raw, 0)
     except (IndexError, ValueError):
         return []
-    out, stack = [], [item]
-    while stack:
-        x = stack.pop()
-        if isinstance(x, list):
-            stack.extend(x)
-        elif len(x) == 20:
-            out.append("0x" + x.hex())
-    return out
+    found, todo = [], [tree]
+    while todo:
+        node = todo.pop()
+        if isinstance(node, list):
+            todo.extend(node)
+        elif len(node) == 20:
+            found.append("0x" + node.hex())
+    return found

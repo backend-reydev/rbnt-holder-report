@@ -1,0 +1,13 @@
+[1/7] RBNT holders, Q3 2026: the first quarterly on-chain holder report, read block by block from the Redbelly chain. Groups only, no individual wallets, no price talk.
+
+[2/7] Staking: 754.8 million RBNT sat in the two Reddex pools on 30 Sep, from 639.1 million on 30 Jun (+18.1%). The no lock pool took most of the rise.
+
+[3/7] Holders: 53,575 wallets held 1 RBNT or more on 30 Sep (53,418 in June). The 10 largest hold 48.4% of all RBNT in unnamed wallets.
+
+[4/7] The 100 biggest wallets of 30 Jun went from 1.38 billion to 1.42 billion RBNT, staked and wrapped included. 43 grew, 49 held flat, 8 shrank.
+
+[5/7] Vesting contracts sent 127.8 million WRBNT to wallets. Reserved wallets held 5.93 billion RBNT at the end, against 5.97 billion, with most of their moves inside the group.
+
+[6/7] WRBNT in circulation went from 1.82 billion to 1.74 billion, always backed one to one by RBNT.
+
+[7/7] Every figure points to a block on Redbelly mainnet, and the method, the tables and a second read from the node are published.
