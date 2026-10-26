@@ -251,6 +251,8 @@ def workbook(target, tables, about):
                 elif isinstance(cell.value, int):
                     cell.number_format = "#,##0"
         sheet.freeze_panes = "B2"
+    wb.properties.creator = "Redbelly DAO"
+    wb.properties.title = about[0][0]
     wb.save(str(target))
 
 
