@@ -218,9 +218,9 @@ anything with code is a contract.</p>
    receiver and newly deployed contract, plus every event emitted by WRBNT or
    either pool. Headers give us the 20-byte values listed in <code>extraData</code>, which
    is where Redbelly names its governors.</li>
-<li><strong>Every internal transfer.</strong> Contracts also move RBNT inside other
-   transactions, and the public node has no trace interface, so we read the
-   explorer's <code>txlistinternal</code> by block range from block 0. Whenever a range
+<li><strong>Every internal transfer.</strong> Contracts also hand RBNT on while a
+   transaction runs. The node we use cannot replay those calls, so we take them
+   from the explorer's <code>txlistinternal</code>, by block range, starting at block 0. Whenever a range
    comes back at the 10,000 row limit we split it, so nothing is cut off.</li>
 <li><strong>Public tags.</strong> We read the explorer's address list, largest first, and the
    WRBNT holder list, only to pick up public names and make sure no WRBNT
@@ -432,9 +432,10 @@ make check     # offline: unit tests and the house-rules scan
   contract.</li>
 <li>Addresses are not people. One person can use many addresses and one exchange
   address can hold coins for many people.</li>
-<li>Internal transfers come from the explorer. We test them indirectly: the named
-  wallets, the WRBNT contract and both pools move coins mostly through internal
-  transfers, and all of them balance to the wei.</li>
+<li>Coins passed along inside contract calls are taken from the explorer's
+  records rather than replayed on the node. The named wallets, the WRBNT
+  contract and both pools pay out mostly that way, and all of them balance to
+  the wei, which is our test that those records are complete.</li>
 <li>Public tags were read for the 20,000 largest addresses in the explorer's
   list, so a tag on a smaller address would be missed.</li>
 </ul><footer class="closing">Redbelly DAO Task Board. Figures from Redbelly mainnet blocks 3,025,809 and 3,209,414, read 2026-10-26. Trends only: no forecasts and no investment advice.</footer></main>

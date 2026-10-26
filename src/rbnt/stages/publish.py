@@ -492,9 +492,9 @@ def run(flags):
             "to another address of their own, or put them into a contract.",
             "How many people there are. Counts here are counts of addresses: one person can run many, and one exchange "
             "address can hold coins for many people.",
-            "Internal transfers come from the explorer because the public node offers no trace interface. We tested them "
-            "indirectly: the named wallets, the WRBNT contract and both pools, which move coins mostly through internal "
-            "transfers, all balance to the wei.",
+            "The node we read cannot replay contract calls, so coins that contracts pass along inside a transaction "
+            "were taken from the explorer's records. They hold up: the named wallets, the WRBNT contract and both pools "
+            "pay out mostly that way, and every one of them balances to the wei.",
             f"Public tags were read for the {grouped(work['explorer_rows_read'])} largest addresses in the explorer's "
             "list. A tag on a smaller address would not be seen.",
         ]),

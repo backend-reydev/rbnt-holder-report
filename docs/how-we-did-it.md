@@ -105,9 +105,9 @@ anything with code is a contract.
    receiver and newly deployed contract, plus every event emitted by WRBNT or
    either pool. Headers give us the 20-byte values listed in `extraData`, which
    is where Redbelly names its governors.
-2. **Every internal transfer.** Contracts also move RBNT inside other
-   transactions, and the public node has no trace interface, so we read the
-   explorer's `txlistinternal` by block range from block 0. Whenever a range
+2. **Every internal transfer.** Contracts also hand RBNT on while a
+   transaction runs. The node we use cannot replay those calls, so we take them
+   from the explorer's `txlistinternal`, by block range, starting at block 0. Whenever a range
    comes back at the 10,000 row limit we split it, so nothing is cut off.
 3. **Public tags.** We read the explorer's address list, largest first, and the
    WRBNT holder list, only to pick up public names and make sure no WRBNT
@@ -277,8 +277,9 @@ For Q4 2026:
   contract.
 * Addresses are not people. One person can use many addresses and one exchange
   address can hold coins for many people.
-* Internal transfers come from the explorer. We test them indirectly: the named
-  wallets, the WRBNT contract and both pools move coins mostly through internal
-  transfers, and all of them balance to the wei.
+* Coins passed along inside contract calls are taken from the explorer's
+  records rather than replayed on the node. The named wallets, the WRBNT
+  contract and both pools pay out mostly that way, and all of them balance to
+  the wei, which is our test that those records are complete.
 * Public tags were read for the 20,000 largest addresses in the explorer's
   list, so a tag on a smaller address would be missed.
